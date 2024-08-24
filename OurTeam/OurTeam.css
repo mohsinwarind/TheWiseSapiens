@@ -4,6 +4,7 @@ body {
     background-color: #000000 ;
     font-family: 'Ubuntu', sans-serif;
     color: #fff;
+    user-select: none;
     background: url('/Templates/MyTeamBackground.jpg') no-repeat center center fixed;
     background-size: cover;
 }

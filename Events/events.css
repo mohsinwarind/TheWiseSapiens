@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 0;
+    user-select: none;
     background-color: #000000 ;
     font-family: 'Ubuntu', sans-serif;
     color: #fff;
