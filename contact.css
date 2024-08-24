@@ -1,0 +1,387 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000000 ;
+    font-family: 'Ubuntu', sans-serif;
+    color: #fff;
+    background: url('/Templates/second_landing_image.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+.navbar {
+    background-color: rgba(0, 0, 0, 0); /* Semi-transparent background for navbar */
+    /* position:relative;  */
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure it is on top of other content */
+    padding: 5px;
+    box-sizing: border-box;
+
+}
+
+.navbar-brand {
+    color: white;
+}
+#active {
+    color: #fefeff;
+    font-weight: bold;
+    border-bottom: 2px solid #939191; /* Optional: Add a bottom border for emphasis */
+}
+.navbar-nav .nav-link {
+    color: white;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #fffdfd !important; /* Color on hover */
+}
+
+.navbar-toggler-icon {
+    color: white;
+}
+#active {
+    color: #fefeff;
+    font-weight: bold;
+    border-bottom: 2px solid #939191; /* Optional: Add a bottom border for emphasis */
+}
+
+.signature-font {
+    font-family: "Sassy Frass", sans-serif;
+       
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.8); /* Black background with transparency */
+}
+
+.modal-content {
+    background-color: #333;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px; /* Maximum width */
+    border-radius: 10px;
+    color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    text-align: left;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    font-size: 24px;
+    color:  #929191; /* Accent color for the heading */
+}
+
+.modal-content ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.modal-content li {
+    margin-bottom: 10px;
+}
+
+#closeModalBtn {
+    display: block;
+    width: 100px;
+    margin: 20px auto 0 auto;
+    padding: 10px;
+    background-color:  #929191;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #f4f2f2;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#closeModalBtn:hover {
+    background-color: #000000;
+}
+
+
+ /* Form Styles */
+.form-container {
+    background: rgba(0, 0, 0, 0.8); /* Dark transparent background */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    box-sizing: border-box; /* Ensures padding is included in the width */
+}
+
+.form-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    transition: color 0.3s ease;
+    color: #929191;
+
+}
+.form-container h1:hover, .form-container label:hover{
+    color: #fff;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #929191;
+    transition: color 0.3 ease;
+
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container textarea,
+.form-container select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: none;
+    background: #333;
+    color: #fff;
+    font-size: 16px;
+    box-sizing: border-box; /* Ensures padding is included in the width */
+}
+
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    background: #292929; /* Accent color for the button */
+    border: 2px #333 ;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #faf8f8;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.form-container button:hover {
+    background:  #4b4b4b; /* Darker green on hover */
+}
+
+.form-container .form-section {
+    margin-bottom: 20px;
+}
+
+.form-container select {
+    background: #444; /* Darker background for select input */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 20px;
+    }
+
+    .form-container h1 {
+        font-size: 20px;
+    }
+
+    .form-container input[type="text"],
+    .form-container input[type="email"],
+    .form-container textarea,
+    .form-container select,
+    .form-container button {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+/* Modal Background */
+#thankYouModal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000; /* On top of other content */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.8); /* Dark overlay */
+    backdrop-filter: blur(5px); /* Optional: Blur the background */
+}
+
+/* Modal Content */
+#thankYouModal .modal-content {
+    background-color: #1a1a1a; /* Dark background for the modal */
+    margin: 10% auto; /* Center the modal */
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 400px; /* Responsive size */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    text-align: center;
+}
+
+/* Modal Header */
+#thankYouModal h2 {
+    margin-top: 0;
+    color:  #929191; /* Accent color */
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Modal Text */
+#thankYouModal p {
+    color: #f0f0f0;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Modal Close Button */
+#thankYouModal #closeThankYouModalBtn {
+    padding: 10px 20px;
+    background-color: #585958; /* Accent color for the button */
+    color: #f8f6f6;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#thankYouModal #closeThankYouModalBtn:hover {
+    background-color: #1f201f; /* Darker green on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    #thankYouModal .modal-content {
+        width: 90%;
+        padding: 15px;
+    }
+
+    #thankYouModal h2 {
+        font-size: 20px;
+    }
+
+    #thankYouModal p {
+        font-size: 14px;
+    }
+
+    #thankYouModal #closeThankYouModalBtn {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+}
+
+/* General Footer Styles */
+footer {
+    background-color: #222;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+.gap{
+    padding-top: 60px;
+    padding-bottom: 30px;
+    background-color: #000000;
+}
+.footer {
+    position: relative;
+    width: 100vw;
+    height: 50vh; /* Fixed height */
+    color: #ffffff;
+    overflow: hidden;
+    z-index: 1; /* Ensure it's on top */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.footer-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the entire area */
+    z-index: -1; /* Sends the video behind the content */
+}
+
+.footer-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1200px; /* Optional: to control the maximum width */
+}
+
+.footer-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-col {
+    flex: 1;
+    padding: 15px;
+    min-width: 200px; /* Ensure columns have a minimum width */
+    text-align: center;
+}
+
+.footer-logo {
+    max-width: 100px;
+    margin-bottom: 10px;
+}
+
+.footer-title {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #cccccc;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .footer-row {
+        flex-direction: column; /* Stack columns vertically on small screens */
+        align-items: center; /* Center-align the columns */
+    }
+    .footer-title , .footer-links{
+        display: none;
+    }
+    .footer-content{
+        padding-bottom: 90px;
+    }
+    .footer-col {
+        width: 100%; /* Make columns full-width on small screens */
+        margin-bottom: 20px; /* Space between stacked columns */
+    }
+}
