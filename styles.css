@@ -61,17 +61,18 @@ body, html {
 }
 
 .content h1 {
-    color: #dedcdca5;
+    color: #ffffff;
     font-size: 3em;
     margin-bottom: 20px;
     transition: color 0.3s ease;
     cursor: pointer;
 }
 .content h1:hover , .content p:hover{
-    color: #ffffff;
+    
+    color: #dedcdca5;
 }
 .content p {
-    color: #dedcdca5;
+    color: #ffffff;
     font-size: 1.5em;
     margin-bottom: 40px;
     transition: color 0.3s ease;
