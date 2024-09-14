@@ -41,7 +41,7 @@ body {
     outline: none;
     transition: 0.3s ease;
     cursor: pointer;
-    font-family: 'Montserrat', sans-serif;
+    font-family:  sans-serif;
 }
 
 .custom-select:focus {
