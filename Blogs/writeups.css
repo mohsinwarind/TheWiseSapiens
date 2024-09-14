@@ -153,12 +153,20 @@ body.light .navbar .checkbox-label {
     transform: translateX(24px);
 }
 
-.blog-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin: 20px 0;
+/* Container styling */
+.image-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically if needed */
+    width: 100%; /* Ensure the container takes up full width */
 }
+
+/* Image styling */
+.image-container img {
+    max-width: 100%; /* Ensure the image is responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+
 .heading-wrapper {
     display: flex;
     align-items: center;
@@ -167,7 +175,7 @@ body.light .navbar .checkbox-label {
 }
 
 .heading-wrapper .custom-select-container {
-    margin-left: 15px; /* Space between heading and selector */
+    margin-left: 15px; 
 }
 footer{
     padding: 40px;
@@ -180,27 +188,27 @@ footer #footer-link{
 /* Button container styling */
 .button-container {
     display: flex;
-    justify-content: space-between; /* Space between buttons */
-    max-width: 600px; /* Optional: adjust as needed */
-    margin: 0 auto; /* Center container */
+    justify-content: space-between; 
+    max-width: 600px; 
+    margin: 0 auto;
 }
 
 /* Button styling */
 .btn {
-    border: 1px solid #fff; /* White border */
-    color: #fff; /* White text */
+    border: 1px solid #fff; 
+    color: #fff; 
     justify-content: space-between;
-    background-color: #444; /* Dark background for buttons */
-    padding: 10px 20px; /* Padding for buttons */
-    text-decoration: none; /* Remove underline */
-    border-radius: 5px; /* Rounded corners */
-    font-size: 16px; /* Font size */
+    background-color: #444; 
+    padding: 10px 20px; 
+    text-decoration: none; 
+    border-radius: 5px; 
+    font-size: 16px; 
     margin: 10px;
-    transition: background-color 0.3s; /* Smooth transition */
+    transition: background-color 0.3s;
 }
 
 .btn:hover {
-    background-color: #555; /* Slightly lighter on hover */
+    background-color: #555; 
 }
 
 /* Specific button styling */
@@ -210,5 +218,5 @@ footer #footer-link{
 }
 
 .next-button {
-    margin-right:auto; /* Align to left */
+    margin-right:auto; 
 }
