@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: rgb(5, 5, 5); 
+    color: white; 
+    transition: background 0.2s linear;
+}
+
+.navbar img{
+    max-width: 40px;
+}
+.content {
+    margin-top:40px;
+    padding: 40px;
+    text-align: justify;
+    align-items: center;
+}
+
+.custom-select-container {
+    position: absolute;
+
+    top: 90px; /* Adjust this value if you need it lower or higher */
+    right: 20px; /* Aligns it to the extreme right */
+    z-index: 999; /* Ensures it stays on top of other elements */
+    display: inline-block;
+}
+
+.custom-select {
+    appearance: none;
+    background-color: var(--background-color, #333);
+    color: var(--text-color, #f1f1f1);
+    border: 1px solid var(--border-color, #555);
+    padding: 10px 40px 10px 15px;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s ease;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.custom-select:focus {
+    box-shadow: 0 0 5px var(--border-color, #777); /* Default focus shadow */
+}
+
+.custom-select-container::after {
+    content: "▼";
+    color: var(--icon-color, #f1f1f1);
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 12px;
+}
+
+.custom-select:hover {
+    background-color: var(--hover-bg-color, #555); /* Default hover background */
+}
+body.light .custom-select{
+    background-color: white;
+    color: black;
+    content: "▼";
+    color: var(--icon-color, #000000);
+}
+body.light {
+    background-color: #fff;
+}
+
+body.light h1,
+body.light p,
+body.light .org-name {
+    color: #000;
+}
+.custom-select .light{
+    color: rgb(3, 3, 3);
+}
+body.light .navbar {
+    background-color: aliceblue;
+}
+
+body.light .navbar .checkbox-label {
+    background-color: #111;
+    color: white;
+}
+
+.navbar {
+    background-color: #0b0a0a;
+    padding: 15px;
+    border-bottom: 4px solid black;
+    border-radius: 15px;
+    transition: background 0.2s linear;
+}
+
+.navbar .logo {
+    max-height: 40px;
+}
+
+.navbar .org-name {
+    display: inline-block;
+    color: rgb(229, 229, 229);
+}
+
+@media (max-width: 767px) {
+    .navbar .org-name {
+        display: none;
+    }
+}
+
+.checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+.checkbox-label {
+    background-color: #111;
+    width: 50px;
+    height: 26px;
+    border-radius: 50px;
+    position: relative;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fa-moon {
+    color: #f1c40f;
+}
+
+.fa-sun {
+    color: #f39c12;
+}
+
+.checkbox-label .ball {
+    background-color: #fff;
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    border-radius: 50%;
+    transition: transform 0.2s linear;
+}
+
+.checkbox:checked+.checkbox-label .ball {
+    transform: translateX(24px);
+}
+
+.blog-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+.heading-wrapper {
+    display: flex;
+    align-items: center;
+   
+    gap: 15px; 
+}
+
+.heading-wrapper .custom-select-container {
+    margin-left: 15px; /* Space between heading and selector */
+}
+footer{
+    padding: 40px;
+    text-align: center;
+    
+}
+footer #footer-link{
+    color: rgb(184, 152, 45);
+}
+/* Button container styling */
+.button-container {
+    display: flex;
+    justify-content: space-between; /* Space between buttons */
+    max-width: 600px; /* Optional: adjust as needed */
+    margin: 0 auto; /* Center container */
+}
+
+/* Button styling */
+.btn {
+    border: 1px solid #fff; /* White border */
+    color: #fff; /* White text */
+    justify-content: space-between;
+    background-color: #444; /* Dark background for buttons */
+    padding: 10px 20px; /* Padding for buttons */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    margin: 10px;
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.btn:hover {
+    background-color: #555; /* Slightly lighter on hover */
+}
+
+/* Specific button styling */
+.previous-button {
+   
+    margin-left: auto; 
+}
+
+.next-button {
+    margin-right:auto; /* Align to left */
+}
