@@ -17,7 +17,9 @@ body {
     box-sizing: border-box;
 
 }
-
+.urdu-text{
+    font-family: 'Gulzar',serif;
+}
 .navbar-brand {
     color: white;
 }
