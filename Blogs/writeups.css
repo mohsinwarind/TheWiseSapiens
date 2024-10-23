@@ -10,6 +10,17 @@ body {
     color: white; 
     transition: background 0.2s linear;
 }
+p{
+    font-size:larger;
+   
+}
+
+::selection {
+    background-color: #f1c40f; 
+    color: #000; 
+    
+}
+
 
 .navbar img{
     max-width: 40px;
