@@ -21,7 +21,12 @@ p{
     
 }
 
-
+.credits-link{
+    color: rgb(184, 152, 45);
+    cursor: pointer;
+    font-size:medium;
+    font-weight: bold;
+}
 .navbar img{
     max-width: 40px;
 }
@@ -83,9 +88,22 @@ body.light {
     background-color: #fff;
 }
 
+.divider {
+    height: 1px;
+    background-color: #ffffff; /* Default color for dark theme */
+    margin: 10px 0;
+}
+
+body.light .divider {
+    background-color: #000000; /* Adjust for visibility in light theme */
+}
+
+.credits{
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+}
 body.light h1,
 body.light p,
-body.light .org-name {
+body.light .org-name  {
     color: #000;
 }
 .custom-select .light{
