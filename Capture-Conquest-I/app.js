@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const text = "Welcome to the Capture Quest-I";
+  const text = "Welcome to the Capture Quest-I ";
   const typewriterText = document.getElementById("typewriter-text");
   let index = 0;
 
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Register button interaction
   const registerButton = document.querySelector(".button-1");
   registerButton.addEventListener("click", () => {
-    window.location.href = "https://example.com/register";
+    window.location.href = "https://thewisesapiens.fillout.com/t/mzJWTWGET8us";
   });
 
   // FAQ toggle functionality
