@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const text = "Welcome to the Capture Quest-I ";
+  const text = "Capture Quest-I ";
   const typewriterText = document.getElementById("typewriter-text");
   let index = 0;
 
