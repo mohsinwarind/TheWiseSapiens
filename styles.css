@@ -1,219 +1,79 @@
-/* Base styles */
-body, html {
-    margin: 0;
-    padding: 0;
-    user-select: none;
-    height: 100%;
-    min-height: 100%;
-    background-color: #000000;
+body{
+    background-color: black;
     font-family: 'Ubuntu', sans-serif;
-    color: #ffffff;
+    user-select: none;
+    background-color: #000000;
 }
 
-.navbar {
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for navbar */
-    position: fixed; 
-    top: 0;
-    width: 100%;
-    z-index: 1000; /* Ensure it is on top of other content */
-    padding: 5px;
-    box-sizing: border-box;
+.hero-heading{
+    font-size: 44px;
 }
-
-.navbar-brand {
-    color: white;
+.signature-font {
+    font-family: "Sassy Frass", sans-serif;
 }
-
-.navbar-nav .nav-link {
-    color: white;
-}
-
-.navbar-nav .nav-link:hover {
-    color: #fffdfd !important; /* Color on hover */
-}
-
-.navbar-toggler-icon {
-    color: white;
-}
-
 #active {
     color: #fefeff;
     font-weight: bold;
     border-bottom: 2px solid #939191; /* Optional: Add a bottom border for emphasis */
 }
-
-.signature-font {
-    font-family: "Sassy Frass", sans-serif;
+.hero-para{
+    font-size: 26px;
 }
 
-.hero-section {
-    height: 100vh; /* Full viewport height */
-    width: 100vw;  /* Full viewport width */
-    background: url("Templates/second_landing_image.jpg") center center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+.hero-btn-main{
+    font-size: 20px;
+    border-radius: 50px;
 }
 
-.container {
-    position: relative;
-    z-index: 2;
+.description-para{
+    font-size: 21px;
 }
 
-.content h1 {
-    color: #ffffff;
-    font-size: 3em;
-    margin-bottom: 20px;
-    transition: color 0.3s ease;
-    cursor: pointer;
-}
-.content h1:hover , .content p:hover{
-    
-    color: #dedcdca5;
-}
-.content p {
-    color: #ffffff;
-    font-size: 1.5em;
-    margin-bottom: 40px;
-    transition: color 0.3s ease;
-    cursor: pointer;
+.earth-img {
+    transition: transform 0.5s ease;
 }
 
-.content button {
-    padding: 15px 30px;
-    font-size: 1.2em;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    border-radius: 40px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+.earth-img:hover {
+    transform: scale(1.3);
 }
 
-a {
-    color: white;
+.hero-text-col{
+    width: 90%;
 }
 
-a:hover {
-    color: white;
-    text-decoration: none;
+.navbar {
+    position: sticky;
+    top: 0; 
+    z-index: 1000; 
+    background-color: #fff; 
 }
 
-.content button a {
-    color: white;
-    text-decoration: none;
+.who-we-are-image{
+    width: 80%;
+    margin: auto;
 }
 
-.content button:hover {
-    background-color: #000000;
-    outline: 1px solid white;
+.footer-first-col{
+    width: 80%;
+    margin: auto;
 }
 
-.earth-image {
-    width: auto; /* Adjusts width to maintain aspect ratio */
-    transform: scale(1); 
-    cursor: pointer;
-    transition: transform 0.5s ease; 
-    box-sizing: content-box;
-    object-fit: contain; /* Maintain aspect ratio without stretching */
-    max-width: 100%; /* Ensure it doesn't exceed container's width */
-    max-height: 100%; /* Ensure it doesn't exceed container's height */
+.card-width-div{
+    width: 80%;
+    margin: auto;
 }
 
-.earth-image:hover {
-    transform: scale(1.5);
+.what-we-do-card {
+    transition: transform 0.5s ease;
 }
 
-.who-we-are {
-    background-color: #000000;
-    color: white;
-    cursor: pointer;
-    padding: 0; /* Remove padding to ensure full height */
-    margin: 0; /* Remove margin to ensure full width */
-    width: 100vw; /* Full viewport width */
-    height: 100vh; /* Full viewport height */
-    display: flex; /* Flexbox to align children properly */
-    align-items: center; /* Center items vertically */
-    justify-content: center; /* Center items horizontally */
-    box-sizing: border-box; /* Include padding and border in element's total width and height */
+.what-we-do-card:hover{
+    transform: scale(1.05);
 }
 
-.logo {
-    height: auto;
-}
 
-.text-content {
-    padding-left: 30px;
-}
+/* What we do */
 
-.text-content h2 {
-    margin-bottom: 20px;
-    font-size: 50px;
-    transition: 0.3s ease;
-}
-
-.text-content h2:hover {
-    color: #988282;
-}
-
-.text-content p {
-    font-size: 1.2em;
-    margin-bottom: 30px;
-}
-
-.btn-group .btn {
-    padding: 10px 20px;
-    font-size: 1em;
-    border-radius: 40px;
-    transition: background-color 0.3s;
-    
-    margin-right: 10px; /* Adds space between buttons */
-}
-
-.btn:focus, .btn:active:focus {
-    outline: none;
-    box-shadow: none;
-}
-
-.btn-main {
-    background-color:  #252526;
-    border: none;
-    color: #fff;
-}
-
-.btn-main:hover,
-.btn-second:hover {
-   background-color: #000000;
-   color: white;
-}
-
-.btn-second {
-    background-color: #252526;
-    border: none;
-    color: #fff;
-}
-
-.container.custom-container {
-    position: relative;
-    z-index: 2;
-}
-
-.what-we-do {
-    background: url("Templates/Wallpaper_lockscreen 1.png") center center/cover no-repeat;
-    color: #ffffff;
-    padding: 50px 0;
-    margin-top: 40px;
-    position: relative;
-    width: 100vw; /* Full viewport width */
-    height: 100vh; /* Full viewport height */
-}
-
-.section-title {
-    text-align: center;
-    font-size: 2.5em;
-    margin-bottom: 40px;
-}
 
 .card-link {
     color: white;
@@ -288,102 +148,55 @@ a:hover {
     opacity: 1; /* Show overlay on hover */
 }
 
-.footer {
-    margin-top: 80px;
+.image-container {
     position: relative;
-    width: 100vw;
-    height: 50vh; /* Fixed height */
-    color: #ffffff;
-    padding: 50px 0;
     overflow: hidden;
-    z-index: 1; /* Ensure it's on top */
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-.footer-video {
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.image-container:hover img {
+    transform: scale(1.1);
+    filter: blur(4px);
+}
+
+.overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures the video covers the entire area */
-    z-index: -1; /* Sends the video behind the content */
-}
-
-.footer-content {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    max-width: 1200px; /* Optional: to control the maximum width */
-}
-
-.footer-row {
+    background: rgba(0, 0, 0, 0.5); 
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.footer-col {
-    flex: 1;
-    padding: 15px;
-    min-width: 200px; /* Ensure columns have a minimum width */
+    align-items: center;
+    justify-content: center;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
     text-align: center;
+    padding: 20px;
+    font-size: 1.1em;
 }
 
-.footer-logo {
-    max-width: 100px;
-    margin-bottom: 10px;
+.image-container:hover .overlay {
+    opacity: 1;
 }
 
-.footer-title {
-    font-size: 1.5em;
-    margin-bottom: 20px;
+.btn.hero-btn {
+    background-color: #333333;
+    color: #fff;
+    border: 1px solid #333333;
+    width: 100%;
+    border-radius: 0 0 18px 18px;
+    transition: background-color 0.3s ease, border 0.3s ease;
 }
 
-.footer-links {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-links li {
-    margin-bottom: 10px;
-}
-
-.footer-links a {
-    color: #ffffff;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.footer-links a:hover {
-    color: #cccccc;
-}
-
-/* Responsive adjustments for small devices */
-@media (max-width: 767.98px) {
-    .hero-section,
-    .who-we-are,
-    .what-we-do {
-        min-height: auto; /* Allow sections to adjust based on content */
-        padding-top: 70px;
-        padding-bottom: 70px;
-        margin: 0; /* Remove margin to prevent overlap */
-    }
-
-    .footer {
-        z-index: 1;
-        height: auto; /* Remove fixed height */
-        padding: 50px 0;
-    }
-
-    .footer-title, .footer-links ,.footer-logo,.copyright {
-        display: none;
-    }
-
-    .footer-row {
-        display: block;
-        text-align: center;
-    }
+.btn.hero-btn:hover {
+    background-color: #000000;
+    border: 1px solid white;
 }
