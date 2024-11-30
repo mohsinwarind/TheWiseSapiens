@@ -148,8 +148,8 @@ p {
 @media (max-width: 576px) {
     .team-img {
         top: -80px; /* Adjust image positioning for mobile screens */
-        width: 150px; /* Reduce size for mobile screens */
-        height: 150px;
+        width: 250px; /* Reduce size for mobile screens */
+        height: 250px;
     }
 
     .team-card {
@@ -160,7 +160,9 @@ p {
         margin-top: 50px; /* Adjust spacing for mobile screens */
         font-size: 1.2rem;
     }
-
+    .section-heading{
+        font-size: 50px;
+    }
     p {
         font-size: 0.9rem;
     }
