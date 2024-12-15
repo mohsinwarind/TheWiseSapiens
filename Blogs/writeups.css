@@ -134,10 +134,15 @@ body.light .navbar .checkbox-label {
     display: inline-block;
     color: rgb(229, 229, 229);
 }
-
+.org-name{
+    font-family: "Sassy Frass", sans-serif;
+}
 @media (max-width: 767px) {
     .navbar .org-name {
         display: none;
+    }
+    p {
+        font-size: small;
     }
 }
 
