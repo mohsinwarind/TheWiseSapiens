@@ -142,7 +142,10 @@ body.light .navbar .checkbox-label {
         display: none;
     }
     p {
-        font-size: small;
+        font-size: medium;
+    }
+    h1{
+        font-size: 35px;
     }
 }
 
