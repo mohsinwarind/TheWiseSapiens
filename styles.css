@@ -26,7 +26,7 @@ body{
 }
 
 .description-para{
-    font-size: 21px;
+    font-size: 17px;
 }
 
 .earth-img {
@@ -199,4 +199,15 @@ body{
 .btn.hero-btn:hover {
     background-color: #000000;
     border: 1px solid white;
+}
+@media (max-width: 768px) {
+    .description-para{
+        font-size: 12px;
+    }
+    .hero-para{
+        font-size: 18px;
+    }
+    .hero-heading{
+        font-size: 30px;
+    }
 }
