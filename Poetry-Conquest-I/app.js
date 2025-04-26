@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const text = "Verse Voyage-I ";
+  const text = "Poetry-Conquest-I";
   const typewriterText = document.getElementById("typewriter-text");
   let index = 0;
 
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const registerButton = document.querySelector(".poetry-button");
   registerButton.addEventListener("click", () => {
-    window.location.href = "https://thewisesapiens.fillout.com/t/mzJWTWGET8us";
+    window.location.href = "https://thewisesapiens.fillout.com/t/vYc76Lhykcus";
   });
 
   const questions = document.querySelectorAll(".question");
@@ -123,7 +123,7 @@ function initStars() {
       radius: Math.random() * 1.2 + 0.3,
       opacity: Math.random() * 0.7 + 0.3,
       twinkle: Math.random() * 0.03 + 0.01,
-      color: Math.random() > 0.85 ? 'purple' : 'white' // Occasionally purple stars
+      color: Math.random() > 0.85 ? 'black' : 'white' // Occasionally purple stars
     });
   }
 }
