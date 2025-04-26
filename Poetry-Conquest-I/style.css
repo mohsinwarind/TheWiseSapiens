@@ -1,7 +1,7 @@
 body {
   font-family: 'Cormorant Garamond', serif;
   margin: 0;
-  color: #e0e0e0;
+  color: #ffffff;
   background-color: #0a0a14;
   line-height: 1.8;
   background-image: url('assets/vintagebackground.jpg');
@@ -93,7 +93,7 @@ body {
   font-family: 'Dancing Script', cursive;
   font-size: 1.8rem;
   font-weight: 700;
-  color: #e0e0e0;
+  color: #ffffff;
   line-height: 1.1;
   letter-spacing: 1px;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
@@ -104,7 +104,7 @@ body {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
   font-size: 1rem;
-  color: #e8d8c7;
+  color: #ffffff;
   letter-spacing: 2px;
   margin-top: 2px;
 }
@@ -128,7 +128,7 @@ body {
 .nav-link {
   font-family: 'Dancing Script', cursive;
   font-size: 1.3rem;
-  color: #e0e0e0;
+  color: #ffffff;
   text-decoration: none;
   padding: 8px 12px;
   display: block;
@@ -143,13 +143,13 @@ body {
   left: 50%;
   width: 0;
   height: 1px;
-  background: #e8d8c7;
+  background: #ffffff;
   transition: all 0.3s ease;
   transform: translateX(-50%);
 }
 
 .nav-link:hover {
-  color: #e8d8c7;
+  color: #ffffff;
   text-shadow: 0 0 10px rgba(177, 156, 217, 0.4);
 }
 
@@ -172,7 +172,8 @@ body {
   display: block;
   width: 100%;
   height: 2px;
-  background-color: #e0e0e0;
+
+  background-color: #ffffff;
   transition: all 0.3s ease;
 }
 
@@ -276,13 +277,13 @@ body {
     top: 20px;
     right: 20px;
     font-size: 32px;
-    color: #e0e0e0;
+    color: #ffffff;
     cursor: pointer;
     transition: all 0.3s ease;
   }
   
   .close:hover {
-    color: #e8d8c7;
+    color: #ffffff;
     transform: rotate(90deg);
   }
   
@@ -377,7 +378,7 @@ body {
 
 .hero-text {
   font-size: 4rem;
-  color: #e0e0e0;
+  color: #ffffff;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   margin-bottom: 10px;
 }
@@ -387,7 +388,7 @@ body {
   font-style: italic;
   font-size: 1.4rem;
   margin-top: 5px;
-  color: #e8d8c7;
+  color: #ffffff;
   letter-spacing: 1.5px;
 }
 
@@ -511,7 +512,7 @@ cite {
   display: block;
   text-align: right;
   margin-top: 10px;
-  color: #e8d8c7;
+  color: #ffffff;
 }
 
 .text-wrapper {
@@ -529,7 +530,7 @@ cite {
 
 .section h2 {
   font-size: 3rem;
-  color: #e0e0e0;
+  color: #ffffff;
   margin-bottom: 30px;
   font-family: 'Dancing Script', cursive;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -688,7 +689,7 @@ cite {
   left: 50%;
   height: 100%;
   width: 2px;
-  background: linear-gradient(to bottom, transparent, #e8d8c7, #e8d8c7, transparent);
+  background: linear-gradient(to bottom, transparent, #ffffff, #ffffff, transparent);
   transform: translateX(-50%);
 }
 
@@ -716,7 +717,7 @@ cite {
   position: absolute;
   width: 20px;
   height: 20px;
-  background-color: #e8d8c7;
+  background-color: #ffffff;
   border-radius: 50%;
   top: 15px;
   z-index: 2;
@@ -734,7 +735,7 @@ cite {
 .timeline-date {
   font-family: 'Dancing Script', cursive;
   font-size: 1.3rem;
-  color: #e8d8c7;
+  color: #ffffff;
   margin-bottom: 10px;
 }
 
@@ -756,7 +757,7 @@ cite {
   font-family: 'Dancing Script', cursive;
   font-size: 1.5rem;
   margin-bottom: 10px;
-  color: #e0e0e0;
+  color: #ffffff;
 }
 
 .timeline-content p {
@@ -783,7 +784,7 @@ cite {
 .rule-heading {
   font-family: 'Dancing Script', cursive;
   font-size: 1.8rem;
-  color: #e8d8c7;
+  color: #ffffff;
   margin-bottom: 15px;
   position: relative;
   padding-bottom: 10px;
@@ -796,7 +797,7 @@ cite {
   left: 0;
   width: 100px;
   height: 1px;
-  background: linear-gradient(90deg, #e8d8c7, transparent);
+  background: linear-gradient(90deg, #ffffff, transparent);
 }
 
 .rule-list {
@@ -823,7 +824,7 @@ cite {
   left: 20px;
   height: 100%;
   width: 1px;
-  background: linear-gradient(to bottom, transparent, #e8d8c7, transparent);
+  background: linear-gradient(to bottom, transparent, #ffffff, transparent);
 }
 
 .step {
@@ -869,7 +870,7 @@ cite {
   font-family: 'Dancing Script', cursive;
   font-size: 1.5rem;
   margin-bottom: 10px;
-  color: #e8d8c7;
+  color: #ffffff;
 }
 
 .step-content p {
@@ -884,7 +885,7 @@ cite {
   font-style: italic;
   font-size: 1.4rem;
   margin-bottom: 30px;
-  color: #e0e0e0;
+  color: #ffffff;
 }
 
 .poetry-button {
@@ -960,7 +961,7 @@ cite {
 .faqs-heading {
   font-size: 3rem;
   font-weight: normal;
-  color: #e0e0e0;
+  color: #ffffff;
   margin-bottom: 50px;
   font-family: 'Dancing Script', cursive;
   position: relative;
@@ -1000,7 +1001,7 @@ cite {
 .question {
   font-size: 1.4rem;
   font-weight: normal;
-  color: #e0e0e0;
+  color: #ffffff;
   cursor: pointer;
   font-family: "Dancing Script", cursive;
   background-color: rgba(10, 10, 20, 0.6);
@@ -1014,7 +1015,7 @@ cite {
 
 .question:hover {
   background-color: rgba(10, 10, 20, 0.8);
-  color: #e8d8c7;
+  color: #ffffff;
 }
 
 .question::after {
@@ -1035,7 +1036,7 @@ cite {
 .answer {
   display: none;
   font-size: 1.1rem;
-  color: #e0e0e0;
+  color: #ffffff;
   font-family: "Cormorant Garamond", serif;
   background-color: rgba(10, 10, 20, 0.3);
   padding: 20px;
@@ -1053,7 +1054,7 @@ cite {
 
 footer {
   background-color: rgba(10, 10, 20, 0.8);
-  color: #e0e0e0;
+  color: #ffffff;
   text-align: center;
   padding: 40px 20px;
   font-family: 'Cormorant Garamond', serif;
@@ -1069,7 +1070,7 @@ footer {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
   font-size: 1.3rem;
-  color: #e8d8c7;
+  color: #ffffff;
   margin-bottom: 30px;
   line-height: 1.6;
   position: relative;
@@ -1102,7 +1103,7 @@ footer {
 }
 
 .social-icon {
-  color: #e0e0e0;
+  color: #ffffff;
   font-size: 1.8rem;
   text-decoration: none;
   margin: 0 10px;
@@ -1138,7 +1139,7 @@ footer {
   display: none;
   font-size: 30px;
   cursor: pointer;
-  color: #e0e0e0;
+  color: #ffffff;
 }
 
 .nav-links {
@@ -1211,12 +1212,12 @@ footer {
     position: absolute;
     right: 20px;
     top: 20px;
-    color: #e0e0e0;
+    color: #ffffff;
     font-size: 30px;
   }
 
   .nav-links a {
-    color: #e0e0e0;
+    color: #ffffff;
     padding: 15px 30px;
     text-align: left;
     width: 100%;
@@ -1273,10 +1274,11 @@ footer {
 }
 
 :root {
-  --vintage-bg: #2e1c0d;
-  --vintage-text: #e8d8c7;
-  --vintage-accent: #b08d57;
-  --vintage-accent-dark: #8c6d3f;
+  --vintage-bg: #181513;        /* Very dark, old book cover brown */
+--vintage-text: #d2ccc5;      /* Aged parchment text color */
+--vintage-accent: #3b2f27;    /* Faded leather brown for accents */
+--vintage-accent-dark: #5c4324; /* Deep antique gold/brown for darker accents */
+
 }
 
 body {
@@ -1338,7 +1340,7 @@ body {
 .timeline-dot,
 .step-number {
   background-color: var(--vintage-accent);
-  box-shadow: 0 0 10px rgba(176, 141, 87, 0.8);
+  box-shadow: 0 0 10px rgba(20, 17, 12, 0.8);
 }
 
 blockquote {
