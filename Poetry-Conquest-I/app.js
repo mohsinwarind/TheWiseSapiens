@@ -48,6 +48,8 @@ document.addEventListener("DOMContentLoaded", function () {
   inkCanvas.width = window.innerWidth;
   inkCanvas.height = window.innerHeight;
   
+  const BROWN = [176, 141, 87];  
+
   const createInkDrops = () => {
     inkCtx.clearRect(0, 0, inkCanvas.width, inkCanvas.height);
     
@@ -60,9 +62,9 @@ document.addEventListener("DOMContentLoaded", function () {
       const opacity = Math.random() * 0.15 + 0.05;
       
       const gradient = inkCtx.createRadialGradient(x, y, 0, x, y, size);
-      gradient.addColorStop(0, `rgba(75, 46, 131, ${opacity * 1.5})`);
-      gradient.addColorStop(0.5, `rgba(75, 46, 131, ${opacity})`);
-      gradient.addColorStop(1, 'rgba(75, 46, 131, 0)');
+      gradient.addColorStop(0, `rgba(${BROWN.join(',')}, ${opacity * 1.5})`);
+      gradient.addColorStop(0.5, `rgba(${BROWN.join(',')}, ${opacity})`);
+      gradient.addColorStop(1, `rgba(${BROWN.join(',')}, 0)`);
       
       inkCtx.fillStyle = gradient;
       inkCtx.beginPath();
@@ -70,7 +72,6 @@ document.addEventListener("DOMContentLoaded", function () {
       inkCtx.fill();
       
       const splatterCount = Math.floor(Math.random() * 5) + 3;
-      
       for (let j = 0; j < splatterCount; j++) {
         const angle = Math.random() * Math.PI * 2;
         const distance = Math.random() * size * 0.8 + size * 0.2;
@@ -78,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const splatterY = y + Math.sin(angle) * distance;
         const splatterSize = Math.random() * 20 + 5;
         
-        inkCtx.fillStyle = `rgba(75, 46, 131, ${opacity * 0.8})`;
+        inkCtx.fillStyle = `rgba(${BROWN.join(',')}, ${opacity * 0.8})`;
         inkCtx.beginPath();
         inkCtx.arc(splatterX, splatterY, splatterSize, 0, Math.PI * 2);
         inkCtx.fill();
@@ -114,7 +115,7 @@ const starCount = 200;
 const stars = [];
 
 function initStars() {
-  stars.length = 0; 
+  stars.length = 0;
   
   for (let i = 0; i < starCount; i++) {
     stars.push({
@@ -123,7 +124,7 @@ function initStars() {
       radius: Math.random() * 1.2 + 0.3,
       opacity: Math.random() * 0.7 + 0.3,
       twinkle: Math.random() * 0.03 + 0.01,
-      color: Math.random() > 0.85 ? 'black' : 'white' // Occasionally purple stars
+      color: 'brown'
     });
   }
 }
@@ -134,13 +135,7 @@ function drawStars() {
   stars.forEach((star) => {
     ctx.beginPath();
     ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-    
-    if (star.color === 'purple') {
-      ctx.fillStyle = `rgba(177, 156, 217, ${star.opacity})`;
-    } else {
-      ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
-    }
-    
+    ctx.fillStyle = `rgba(176,141,87,${star.opacity})`;
     ctx.fill();
   });
 }
