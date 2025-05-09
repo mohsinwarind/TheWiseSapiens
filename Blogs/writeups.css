@@ -103,6 +103,7 @@ body.light .divider {
 }
 body.light h1,
 body.light p,
+body.light h3,
 body.light .org-name  {
     color: #000;
 }

@@ -133,6 +133,14 @@ body {
     transition: color 0.3s ease;
 }
 
+.blog-content h3 {
+    font-size: 1.75rem;
+    margin: 0 0 15px;
+    font-weight: 600;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
 .blog-content p {
     font-size: 1.1rem;
     margin: 0;
