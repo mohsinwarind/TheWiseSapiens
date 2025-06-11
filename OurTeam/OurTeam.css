@@ -1,85 +1,94 @@
 body {
-    margin: auto;
+    margin: 0;
     padding: 0;
-    background-color: #000000 ;
+    background-color: #000000;
     font-family: 'Ubuntu', sans-serif;
     color: #fff;
     user-select: none;
     background: url('/Templates/MyTeamBackground.jpg') no-repeat center center fixed;
     background-size: cover;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
-.navbar {
-    background-color: rgba(0, 0, 0, 0); /* Semi-transparent background for navbar */
-    /* position:relative;  */
-    top: 0;
-    width: 100%;
-    z-index: 1000; /* Ensure it is on top of other content */
-    padding: 5px;
-    box-sizing: border-box;
 
+/* Navbar styles */
+.navbar {
+    background-color: rgba(0, 0, 0, 0); /* Semi-transparent background */
+    width: 100%;
+    z-index: 1000;
+    padding: 5px;
 }
 
 .navbar-brand {
     color: white;
-}
-#active {
-    color: #fefeff;
-    font-weight: bold;
-    border-bottom: 2px solid #939191; /* Optional: Add a bottom border for emphasis */
-}
-.navbar-nav .nav-link {
-    color: white;
+    display: flex;
+    align-items: center;
 }
 
-.navbar-nav .nav-link:hover {
-    color: #fffdfd !important; /* Color on hover */
+.logo {
+    width: auto;
+    height: 40px; /* Fixed height for consistency */
+    margin-right: 8px;
 }
-
-.navbar-toggler-icon {
-    color: white;
-}
-
 
 .signature-font {
     font-family: "Sassy Frass", sans-serif;
-    
-   
+    font-size: 2rem; /* Responsive font size */
 }
+
+#active {
+    color: #fefeff;
+    font-weight: bold;
+    border-bottom: 2px solid #939191;
+}
+
+.navbar-nav .nav-link {
+    color: white;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #fffdfd !important;
+}
+
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.7);
+}
+
+/* Team section styles */
 .team-section {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-top: 80px; 
-    margin-bottom: 80px; 
+    padding: 80px 0;
+    margin-bottom: 40px;
 }
 
 .section-heading {
-    
-    font-size: 80px;
+    font-size: 4rem; /* Responsive font size */
     font-weight: bold;
     margin-bottom: 40px;
     color: #929191;
     transition: color 0.3s ease;
-
 }
-.section-heading:hover{
-    color: #ffffff;
 
+.section-heading:hover {
+    color: #ffffff;
 }
 
 .team-card {
-
     position: relative;
     background: rgba(40, 38, 38, 0.646);
     border-radius: 15px;
-    padding: 120px 20px 20px; /* Increase padding to fit the larger image */
-    margin-bottom: 60px; /* Increase space between cards */
+    padding: 20px;
+    padding-top: 120px;
+    margin-top: 120px; /* Space for image to overlap */
     box-shadow: 0 8px 30px rgba(46, 46, 46, 0.26);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: visible; /* Allow overflow to extend beyond the card */
+    overflow: visible;
+    height: 100%; /* Equal height cards */
 }
-
 
 .team-card:hover {
     transform: translateY(-10px);
@@ -88,18 +97,17 @@ body {
 
 .team-img {
     position: absolute;
-    top: -150px; /* Adjust positioning to account for larger size */
+    top: -100px;
     left: 50%;
     transform: translateX(-50%);
-    width: 350px; /* Increase size */
-    height: 350px; /* Increase size */
+    width: 200px; /* Base size */
+    height: 200px; /* Base size */
     background: none;
     border-radius: 0;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     z-index: 1;
     overflow: hidden;
 }
-
 
 .team-img img {
     width: 100%;
@@ -113,88 +121,35 @@ body {
     filter: grayscale(0%);
 }
 
-h5 {
-    margin-top: 90px; /* Adjust spacing for the larger image */
+.team-card h5 {
+    margin-top: 10px;
     font-size: 1.5rem;
     font-weight: bold;
+    color: #fff;
 }
 
-p {
+.team-card p {
     font-size: 1.1rem;
     color: #ccc;
 }
 
-@media (max-width: 768px) {
-    .team-img {
-        top: -100px; /* Adjust image positioning for tablet screens */
-        width: 200px; /* Adjust size for tablet screens */
-        height: 200px;
-    }
-
-    .team-card {
-        margin-bottom: 40px; /* Adjust margin for smaller screens */
-    }
-
-    h5 {
-        margin-top: 60px; /* Adjust spacing for tablets */
-        font-size: 1.5rem;
-    }
-
-    p {
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .team-img {
-        top: -80px; /* Adjust image positioning for mobile screens */
-        width: 250px; /* Reduce size for mobile screens */
-        height: 250px;
-    }
-
-    .team-card {
-        margin-bottom: 30px; /* Adjust margin for mobile screens */
-    }
-
-    h5 {
-        margin-top: 50px; /* Adjust spacing for mobile screens */
-        font-size: 1.2rem;
-    }
-    .section-heading{
-        font-size: 50px;
-    }
-    p {
-        font-size: 0.9rem;
-    }
-}
-
-
-/* General Footer Styles */
-footer {
-    background-color: #222;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-.gap{
-    padding-top: 60px;
-    padding-bottom: 30px;
+/* Gap section */
+.gap {
+    padding: 60px 0 30px;
     background-color: #000000;
 }
+
+/* Footer styles */
 .footer {
     position: relative;
-    width: 100vw;
-    height: 50vh; /* Fixed height */
+    width: 100%;
     color: #ffffff;
     overflow: hidden;
-    z-index: 1; /* Ensure it's on top */
+    z-index: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    
+    min-height: 300px; /* Minimum height instead of fixed height */
 }
 
 .footer-video {
@@ -203,15 +158,16 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures the video covers the entire area */
-    z-index: -1; /* Sends the video behind the content */
+    object-fit: cover;
+    z-index: -1;
 }
 
 .footer-content {
     position: relative;
     z-index: 2;
     width: 100%;
-    max-width: 1200px; /* Optional: to control the maximum width */
+    max-width: 1200px;
+    padding: 20px 15px;
 }
 
 .footer-row {
@@ -223,7 +179,7 @@ footer {
 .footer-col {
     flex: 1;
     padding: 15px;
-    min-width: 200px; /* Ensure columns have a minimum width */
+    min-width: 200px;
     text-align: center;
 }
 
@@ -240,6 +196,7 @@ footer {
 .footer-links {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .footer-links li {
@@ -256,20 +213,144 @@ footer {
     color: #cccccc;
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .footer-row {
-        flex-direction: column; /* Stack columns vertically on small screens */
-        align-items: center; /* Center-align the columns */
+/* Responsive media queries */
+@media (max-width: 1200px) {
+    .team-img {
+        width: 180px;
+        height: 180px;
+        top: -90px;
     }
-    .footer-title , .footer-links{
+    
+    .section-heading {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .section-heading {
+        font-size: 3rem;
+    }
+
+    .signature-font {
+        font-size: 1.8rem;
+    }
+    
+    .team-img {
+        width: 160px;
+        height: 160px;
+        top: -80px;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-heading {
+        font-size: 2.5rem;
+    }
+
+    .team-img {
+        width: 140px;
+        height: 140px;
+        top: -70px;
+    }
+    
+    .team-card {
+        padding-top: 90px;
+        margin-top: 90px;
+    }
+    
+    .team-card h5 {
+        font-size: 1.3rem;
+    }
+    
+    .team-card p {
+        font-size: 1rem;
+    }
+    
+    .signature-font {
+        font-size: 1.5rem;
+    }
+    
+    /* Stack footer columns */
+    .footer-row {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .footer-col {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .footer {
+        min-height: 250px;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-heading {
+        font-size: 2rem;
+    }
+    
+    .navbar-brand {
+        max-width: 70%;
+    }
+    
+    .logo {
+        height: 30px;
+    }
+    
+    .signature-font {
+        font-size: 1.3rem;
+    }
+    
+    .team-img {
+        width: 120px;
+        height: 120px;
+        top: -60px;
+    }
+    
+    .team-card {
+        padding-top: 70px;
+        margin-top: 80px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    .team-card h5 {
+        font-size: 1.2rem;
+        margin-top: 5px;
+    }
+    
+    .team-card p {
+        font-size: 0.9rem;
+    }
+    
+    /* Footer adjustments for mobile */
+    .footer {
+        min-height: 200px;
+    }
+    
+    /* Hide some footer content on very small screens */
+    .footer-col:not(:first-child) .footer-title,
+    .footer-col:not(:first-child) .footer-links {
         display: none;
     }
-    .footer-content{
-        padding-bottom: 90px;
+}
+
+/* Extra small devices */
+@media (max-width: 400px) {
+    .section-heading {
+        font-size: 1.8rem;
     }
-    .footer-col {
-        width: 100%; /* Make columns full-width on small screens */
-        margin-bottom: 20px; /* Space between stacked columns */
+    
+    .team-img {
+        width: 100px;
+        height: 100px;
+        top: -50px;
+    }
+    
+    .team-card {
+        padding-top: 60px;
+        margin-top: 70px;
     }
 }
