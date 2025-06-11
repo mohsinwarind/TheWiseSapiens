@@ -1,83 +1,178 @@
-body{
+/* Base styles */
+body {
     background-color: black;
     font-family: 'Ubuntu', sans-serif;
     user-select: none;
-    background-color: #000000;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
-.hero-heading{
-    font-size: 44px;
+/* Container styles */
+.nav-container,
+.content-container {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 15px;
 }
+
+/* Navbar styles */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-logo {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+}
+
 .signature-font {
     font-family: "Sassy Frass", sans-serif;
+    font-size: 2.5rem;
+    margin-top: 10px;
 }
+
 #active {
     color: #fefeff;
     font-weight: bold;
-    border-bottom: 2px solid #939191; /* Optional: Add a bottom border for emphasis */
-}
-.hero-para{
-    font-size: 26px;
+    border-bottom: 2px solid #939191;
 }
 
-.hero-btn-main{
-    font-size: 20px;
-    border-radius: 50px;
+/* Hero section */
+.hero-section {
+    min-height: 95vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('Templates/second_landing_image.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 40px 0;
 }
 
-.description-para{
-    font-size: 17px;
+.hero-text-col {
+    width: 100%;
+    max-width: 500px;
+}
+
+.hero-heading {
+    font-size: 2.75rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.hero-para {
+    font-size: 1.625rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero-btn-main {
+    background-color: #333333;
+    border: 1px solid #333333;
+    color: white;
+    font-size: 1.25rem;
+    padding: 12px 24px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.hero-btn-main:hover {
+    background-color: #000000;
+    border: 1px solid white;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.earth-container {
+    text-align: center;
+    overflow: hidden;
 }
 
 .earth-img {
+    max-width: 100%;
     transition: transform 0.5s ease;
 }
 
 .earth-img:hover {
-    transform: scale(1.3);
+    transform: scale(1.2);
 }
 
-.hero-text-col{
-    width: 90%;
+/* Who we are section */
+.who-we-are-section {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    padding: 60px 0;
+    color: white;
 }
 
-.navbar {
-    position: sticky;
-    top: 0; 
-    z-index: 1000; 
-    background-color: #fff; 
-}
-
-.who-we-are-image{
+.who-we-are-image {
     width: 80%;
-    margin: auto;
+    max-width: 300px;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
 }
 
-.footer-first-col{
-    width: 80%;
-    margin: auto;
-}
-
-.card-width-div{
-    width: 80%;
-    margin: auto;
-}
-
-.what-we-do-card {
-    transition: transform 0.5s ease;
-}
-
-.what-we-do-card:hover{
+.who-we-are-image:hover {
     transform: scale(1.05);
 }
 
+.description-para {
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
 
-/* What we do */
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
 
+.btn-left {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
 
+.btn-right {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/* What we do section */
+.what-we-do-section {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url('Templates/Wallpaper_lockscreen 1.png');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 60px 0;
+}
+
+.what-we-do-card {
+    padding: 20px;
+    transition: transform 0.5s ease;
+}
+
+.what-we-do-card:hover {
+    transform: scale(1.05);
+}
+
+/* Card styles */
 .card-link {
     color: white;
     text-decoration: none;
+    display: block;
+    height: 100%;
 }
 
 .card {
@@ -89,38 +184,35 @@ body{
     margin-bottom: 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    height: 100%;
 }
 
 .card:hover {
-    transform: scale(1.05); /* Slightly enlarge card on hover */
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .card-img {
     width: 100%;
-    height: auto;
+    height: 200px;
+    object-fit: cover;
     display: block;
 }
 
-.card-body {
-    padding: 0;
-}
-
 .card-title {
-    font-size: 1.5em;
+    font-size: 1.5rem;
     text-align: center;
-    margin: 15px 0;
+    margin: 0;
+    padding: 15px;
     color: white;
-    background-color:#252526;
-    
-    
-    padding: 10px;
-    border-radius: 0 0 10px 10px; /* Only round bottom corners */
+    background-color: #252526;
+    border-radius: 0 0 10px 10px;
     position: relative;
-    z-index: 2; /* Ensure title is above the overlay */
-    transition: transform 0.3s ease;
+    z-index: 2;
+    transition: background-color 0.3s ease;
 }
 
-.card-title:hover {
+.card:hover .card-title {
     background-color: #000000;
     border: 1px solid rgb(179, 177, 177);
 }
@@ -140,74 +232,267 @@ body{
     opacity: 0;
     transition: opacity 0.5s ease;
     padding: 20px;
-    border-radius: 10px; /* Round all corners to match card */
-    z-index: 1; /* Ensure overlay is behind the title */
+    border-radius: 10px;
+    z-index: 1;
 }
 
 .card:hover .card-overlay {
-    opacity: 1; /* Show overlay on hover */
+    opacity: 1;
 }
 
-.image-container {
+.card-overlay p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Footer */
+.site-footer {
     position: relative;
+    min-height: 50vh;
+    color: white;
+    padding: 50px 0;
     overflow: hidden;
 }
 
-.image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.image-container:hover img {
-    transform: scale(1.1);
-    filter: blur(4px);
-}
-
-.overlay {
+.footer-video {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.footer-col {
     text-align: center;
-    padding: 20px;
-    font-size: 1.1em;
+    padding: 15px;
+    margin-bottom: 30px;
 }
 
-.image-container:hover .overlay {
-    opacity: 1;
+.footer-logo {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
 }
 
-.btn.hero-btn {
-    background-color: #333333;
-    color: #fff;
-    border: 1px solid #333333;
-    width: 100%;
-    border-radius: 0 0 18px 18px;
-    transition: background-color 0.3s ease, border 0.3s ease;
+.footer-col h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
 }
 
-.btn.hero-btn:hover {
-    background-color: #000000;
-    border: 1px solid white;
+.footer-links {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
-@media (max-width: 768px) {
-    .description-para{
-        font-size: 12px;
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: inherit;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.footer-links a:hover {
+    opacity: 0.8;
+}
+
+.copyright {
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
+
+/* Responsive Media Queries */
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+    .hero-heading {
+        font-size: 2.5rem;
     }
-    .hero-para{
-        font-size: 18px;
+    
+    .hero-para {
+        font-size: 1.5rem;
     }
-    .hero-heading{
-        font-size: 30px;
+    
+    .description-para {
+        font-size: 1rem;
+    }
+    
+    .signature-font {
+        font-size: 2.3rem;
+    }
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+    .hero-heading {
+        font-size: 2.25rem;
+    }
+    
+    .hero-para {
+        font-size: 1.35rem;
+    }
+    
+    .hero-btn-main {
+        font-size: 1.1rem;
+        padding: 10px 20px;
+    }
+    
+    .description-para {
+        font-size: 0.95rem;
+    }
+    
+    .signature-font {
+        font-size: 2.1rem;
+    }
+    
+    .card-title {
+        font-size: 1.3rem;
+        padding: 12px;
+    }
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+    .content-container {
+        width: 95%;
+        padding: 0 10px;
+    }
+    
+    .hero-section,
+    .who-we-are-section,
+    .what-we-do-section {
+        padding: 40px 0;
+    }
+    
+    .hero-heading {
+        font-size: 2rem;
+    }
+    
+    .hero-para {
+        font-size: 1.2rem;
+    }
+    
+    .description-para {
+        font-size: 0.9rem;
+    }
+    
+    .who-we-are-image {
+        width: 60%;
+        margin-bottom: 30px;
+    }
+    
+    .signature-font {
+        font-size: 1.9rem;
+    }
+    
+    .what-we-do-card {
+        padding: 15px;
+    }
+    
+    .card-img {
+        height: 180px;
+    }
+    
+    .card-title {
+        font-size: 1.2rem;
+        padding: 10px;
+    }
+    
+    .button-group {
+        justify-content: center;
+    }
+    
+    .hero-btn-main {
+        width: 100%;
+        max-width: 200px;
+    }
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .hero-text-col {
+        text-align: center;
+    }
+    
+    .hero-heading {
+        font-size: 1.8rem;
+    }
+    
+    .hero-para {
+        font-size: 1.1rem;
+    }
+    
+    .hero-btn-main {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+    
+    .description-para {
+        font-size: 0.85rem;
+    }
+    
+    .who-we-are-image {
+        width: 50%;
+    }
+    
+    .signature-font {
+        font-size: 1.7rem;
+    }
+    
+    .card-img {
+        height: 160px;
+    }
+    
+    .card-title {
+        font-size: 1.1rem;
+        padding: 8px;
+    }
+    
+    .card-overlay p {
+        font-size: 0.9rem;
+    }
+    
+    .footer-col h3 {
+        font-size: 1.3rem;
+    }
+    
+    .footer-links li {
+        margin-bottom: 8px;
+    }
+}
+
+/* Very small devices (small portrait phones, less than 400px) */
+@media (max-width: 399.98px) {
+    .hero-heading {
+        font-size: 1.6rem;
+    }
+    
+    .hero-para {
+        font-size: 1rem;
+    }
+    
+    .description-para {
+        font-size: 0.8rem;
+    }
+    
+    .signature-font {
+        font-size: 1.5rem;
+    }
+    
+    .navbar-logo {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .card-img {
+        height: 140px;
+    }
+    
+    .card-title {
+        font-size: 1rem;
     }
 }
