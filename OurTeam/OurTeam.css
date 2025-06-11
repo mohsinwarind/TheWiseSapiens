@@ -82,8 +82,8 @@ body {
     background: rgba(40, 38, 38, 0.646);
     border-radius: 15px;
     padding: 20px;
-    padding-top: 120px;
-    margin-top: 120px; /* Space for image to overlap */
+    padding-top: 160px; /* Increased from 120px to accommodate larger images */
+    margin-top: 160px; /* Increased from 120px */
     box-shadow: 0 8px 30px rgba(46, 46, 46, 0.26);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow: visible;
@@ -97,11 +97,11 @@ body {
 
 .team-img {
     position: absolute;
-    top: -100px;
+    top: -130px; /* Adjusted from -100px */
     left: 50%;
     transform: translateX(-50%);
-    width: 200px; /* Base size */
-    height: 200px; /* Base size */
+    width: 260px; /* Increased from 200px */
+    height: 260px; /* Increased from 200px */
     background: none;
     border-radius: 0;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
@@ -216,9 +216,14 @@ body {
 /* Responsive media queries */
 @media (max-width: 1200px) {
     .team-img {
-        width: 180px;
-        height: 180px;
-        top: -90px;
+        width: 240px; /* Increased from 180px */
+        height: 240px; /* Increased from 180px */
+        top: -120px; /* Adjusted from -90px */
+    }
+    
+    .team-card {
+        padding-top: 140px; /* Increased for larger image */
+        margin-top: 140px;
     }
     
     .section-heading {
@@ -236,9 +241,14 @@ body {
     }
     
     .team-img {
-        width: 160px;
-        height: 160px;
-        top: -80px;
+        width: 220px; /* Increased from 160px */
+        height: 220px; /* Increased from 160px */
+        top: -110px; /* Adjusted from -80px */
+    }
+    
+    .team-card {
+        padding-top: 130px;
+        margin-top: 130px;
     }
 }
 
@@ -248,14 +258,14 @@ body {
     }
 
     .team-img {
-        width: 140px;
-        height: 140px;
-        top: -70px;
+        width: 200px; /* Increased from 140px */
+        height: 200px; /* Increased from 140px */
+        top: -100px; /* Adjusted from -70px */
     }
     
     .team-card {
-        padding-top: 90px;
-        margin-top: 90px;
+        padding-top: 120px;
+        margin-top: 120px;
     }
     
     .team-card h5 {
@@ -304,14 +314,14 @@ body {
     }
     
     .team-img {
-        width: 120px;
-        height: 120px;
-        top: -60px;
+        width: 180px; /* Increased from 120px */
+        height: 180px; /* Increased from 120px */
+        top: -90px; /* Adjusted from -60px */
     }
     
     .team-card {
-        padding-top: 70px;
-        margin-top: 80px;
+        padding-top: 110px; /* Adjusted from 70px */
+        margin-top: 110px; /* Adjusted from 80px */
         padding-left: 10px;
         padding-right: 10px;
     }
@@ -344,13 +354,13 @@ body {
     }
     
     .team-img {
-        width: 100px;
-        height: 100px;
-        top: -50px;
+        width: 160px; /* Increased from 100px */
+        height: 160px; /* Increased from 100px */
+        top: -80px; /* Adjusted from -50px */
     }
     
     .team-card {
-        padding-top: 60px;
-        margin-top: 70px;
+        padding-top: 100px; /* Adjusted from 60px */
+        margin-top: 100px; /* Adjusted from 70px */
     }
 }
