@@ -97,8 +97,9 @@ body {
 /* Blog Grid */
 .blog-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(512px, 1fr));
+    gap: 30px;
+    justify-content: center;
 }
 
 /* Blog Card */
@@ -112,6 +113,8 @@ body {
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     height: 100%; /* Equal height cards */
+    max-width: 512px;
+    margin: 0 auto;
 }
 
 .blog-card:hover {
@@ -122,7 +125,9 @@ body {
 .blog-img {
     position: relative;
     overflow: hidden;
-    height: 200px; /* Fixed height for consistency */
+    width: 512px;
+    height: 512px; /* Square 512x512 images */
+    max-width: 100%;
 }
 
 .blog-img img {
@@ -267,7 +272,12 @@ body {
     }
     
     .blog-grid {
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    }
+    
+    .blog-img {
+        height: 450px;
+        width: 450px;
     }
 }
 
@@ -277,7 +287,12 @@ body {
     }
     
     .blog-grid {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    }
+    
+    .blog-img {
+        height: 400px;
+        width: 400px;
     }
     
     .signature-font {
@@ -292,8 +307,7 @@ body {
     }
     
     .blog-grid {
-        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-        gap: 15px;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     }
     
     .blog-content h2 {
@@ -301,7 +315,8 @@ body {
     }
     
     .blog-img {
-        height: 180px;
+        height: 350px;
+        width: 350px;
     }
     
     .blog-content {
@@ -337,7 +352,6 @@ body {
     
     .blog-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
     }
     
     .blog-content h2 {
@@ -345,7 +359,12 @@ body {
     }
     
     .blog-img {
-        height: 160px;
+        height: 300px;
+        width: 300px;
+    }
+    
+    .blog-card {
+        max-width: 300px;
     }
     
     .navbar-brand {
@@ -379,6 +398,15 @@ body {
     
     .blog-content h2 {
         font-size: 1.1rem;
+    }
+    
+    .blog-img {
+        height: 280px;
+        width: 280px;
+    }
+    
+    .blog-card {
+        max-width: 280px;
     }
     
     .blog-content .urdu-text {
