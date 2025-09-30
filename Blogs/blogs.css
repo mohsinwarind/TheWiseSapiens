@@ -8,7 +8,7 @@ body {
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-x: hidden;
 }
 
 /* Navbar styles */
@@ -27,13 +27,13 @@ body {
 
 .logo {
     width: auto;
-    height: 40px; /* Fixed height instead of percentage */
+    height: 40px;
     margin-right: 8px;
 }
 
 .signature-font {
     font-family: "Sassy Frass", sans-serif;
-    font-size: 2rem; /* Responsive font size */
+    font-size: 2rem;
 }
 
 #active {
@@ -59,7 +59,7 @@ body {
 /* Urdu text styling */
 .urdu-text {
     font-family: 'Gulzar', serif;
-    line-height: 1.8; /* Better line height for Urdu */
+    line-height: 1.8;
     margin-top: 0.5rem;
 }
 
@@ -73,7 +73,7 @@ body {
     width: 90%;
     margin: auto;
     overflow: hidden;
-    padding: 0 15px; /* Consistent padding */
+    padding: 0 15px;
 }
 
 .section-heading {
@@ -94,10 +94,10 @@ body {
     color: #fff;
 }
 
-/* Blog Grid */
+/* Blog Grid - 3 columns */
 .blog-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(512px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     justify-content: center;
 }
@@ -112,9 +112,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 100%; /* Equal height cards */
-    max-width: 512px;
-    margin: 0 auto;
+    height: 100%;
 }
 
 .blog-card:hover {
@@ -125,22 +123,21 @@ body {
 .blog-img {
     position: relative;
     overflow: hidden;
-    width: 512px;
-    height: 512px; /* Square 512x512 images */
-    max-width: 100%;
+    width: 100%;
+    aspect-ratio: 1/1; /* Square aspect ratio */
 }
 
 .blog-img img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    transition: filter 0.3s ease, transform 0.5s ease;
+    object-fit: cover; /* This prevents zooming/clipping */
+    transition: filter 0.3s ease;
     filter: grayscale(100%);
+    background-color: #f0f0f0; /* Light background for images */
 }
 
 .blog-img img:hover {
     filter: grayscale(0%);
-    transform: scale(1.05);
 }
 
 .blog-content {
@@ -149,7 +146,7 @@ body {
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    min-height: 120px; /* Minimum height for consistency */
+    min-height: 120px;
 }
 
 .blog-content h2 {
@@ -201,7 +198,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 300px; /* Minimum height instead of fixed height */
+    min-height: 300px;
 }
 
 .footer-video {
@@ -266,33 +263,13 @@ body {
 }
 
 /* Responsive media queries */
-@media (max-width: 1200px) {
-    .section-heading {
-        font-size: 2.7rem;
-    }
-    
-    .blog-grid {
-        grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
-    }
-    
-    .blog-img {
-        height: 450px;
-        width: 450px;
-    }
-}
-
 @media (max-width: 992px) {
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
     .section-heading {
         font-size: 2.4rem;
-    }
-    
-    .blog-grid {
-        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-    }
-    
-    .blog-img {
-        height: 400px;
-        width: 400px;
     }
     
     .signature-font {
@@ -301,22 +278,17 @@ body {
 }
 
 @media (max-width: 768px) {
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+    
     .section-heading {
         font-size: 2rem;
         padding: 10px;
     }
     
-    .blog-grid {
-        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    }
-    
     .blog-content h2 {
         font-size: 1.3rem;
-    }
-    
-    .blog-img {
-        height: 350px;
-        width: 350px;
     }
     
     .blog-content {
@@ -328,7 +300,6 @@ body {
         font-size: 1.5rem;
     }
     
-    /* Stack footer columns */
     .footer-row {
         flex-direction: column;
         align-items: center;
@@ -350,21 +321,8 @@ body {
         margin: 25px 0;
     }
     
-    .blog-grid {
-        grid-template-columns: 1fr;
-    }
-    
     .blog-content h2 {
         font-size: 1.2rem;
-    }
-    
-    .blog-img {
-        height: 300px;
-        width: 300px;
-    }
-    
-    .blog-card {
-        max-width: 300px;
     }
     
     .navbar-brand {
@@ -379,7 +337,6 @@ body {
         font-size: 1.3rem;
     }
     
-    /* Footer adjustments for mobile */
     .footer {
         min-height: 200px;
     }
@@ -387,29 +344,5 @@ body {
     .footer-col:not(:first-child) .footer-title,
     .footer-col:not(:first-child) .footer-links {
         display: none;
-    }
-}
-
-/* Extra small devices */
-@media (max-width: 400px) {
-    .section-heading {
-        font-size: 1.5rem;
-    }
-    
-    .blog-content h2 {
-        font-size: 1.1rem;
-    }
-    
-    .blog-img {
-        height: 280px;
-        width: 280px;
-    }
-    
-    .blog-card {
-        max-width: 280px;
-    }
-    
-    .blog-content .urdu-text {
-        font-size: 1rem;
     }
 }
