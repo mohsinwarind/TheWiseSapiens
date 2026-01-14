@@ -1,0 +1,64 @@
+{% extends "ngo/base.html" %}
+{% block css %}
+{% load static %}
+<link rel="stylesheet" href="{% static "events/css/event.css" %}">
+
+{% endblock css %}
+
+{% block body %}
+
+    <section id="events" class="events-section">
+        <div class="container">
+            <div class="section-heading" data-aos="fade-up" data-aos-duration="1500">
+                <h2>Events</h2>
+            </div>
+            <div class="row justify-content-center">
+                
+                <!-- Events Card 3 -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-duration="1500">
+                    <a href="{% url "event" slug='PoetryConquest' %}" target="_blank" class="event-card">
+                        <div class="event-card-image" style="background-image: url('{% static "events/assets/PoetryConquestI.png" %}');"></div>
+                        <div class="event-card-content">
+                            <h3 class="event-card-title">Poetry Conquest-I</h3>
+                            <p class="event-card-description">A fortnight-long (two weeks) journey of expression and poems!</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Events Card 3 -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-duration="1500">
+                    <a href="{% url "event" slug='CaptureConquestI' %}" target="_blank" class="event-card">
+                        <div class="event-card-image" style="background-image: url('{% static "events/assets/CaptureConquestI.png" %}');"></div>
+                        <div class="event-card-content">
+                            <h3 class="event-card-title">Capture Quest I</h3>
+                            <p class="event-card-description">A week-long photography competition where your lens brings stunning moments to life!</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Event Card 1 -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-duration="1500">
+                    <a href="{% url "event" slug='CodeConquest2' %}" target="_blank" class="event-card">
+                        <div class="event-card-image" style="background-image: url('{% static "events/assets/CodeConquest2.png" %}');"></div>
+                        <div class="event-card-content">
+                            <h3 class="event-card-title">Code Conquest II</h3>
+                            <p class="event-card-description">A week of creative web design – where your imagination become reality!</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Event Card 2 -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-duration="1500">
+                    <a href="{% url "event" slug='CodeConquestI' %}" target="_blank" class="event-card">
+                        <div class="event-card-image" style="background-image: url('{% static "events/assets/CodeConquest1.png" %}');"></div>
+                        <div class="event-card-content">
+                            <h3 class="event-card-title">Code Conquest I</h3>
+                            <p class="event-card-description">Our very first remote Hackathon.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock body %}

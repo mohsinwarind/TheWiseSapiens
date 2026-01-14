@@ -1,0 +1,148 @@
+{% extends "ngo/base.html" %}
+{% load static %}
+{% block css %}
+ <link rel="stylesheet" href="{% static "blogs/css/blogs.css" %}">
+{% endblock css %}
+
+{% block body %}
+<section class="blog-section">
+    <div class="container">
+        <h1 class="section-heading">Our Blogs</h1>
+        <div class="blog-grid">
+
+            <a href="{% url 'blog_page' slug='TheoryofRelativity' %}" class="blog-card" data-aos="fade-up" data-aos-duration="1500">
+                <div class="blog-img">
+                    <img src="{% static 'blogs/BlogsPhotos/Relativity.jpg' %}" alt="Blog Post 1">
+                </div>
+                <div class="blog-content">
+                    <h2>Theory of Relativity</h2>
+                    <h2 class="urdu-text">نظریۂ اضافیت</h2>
+                </div>
+            </a>
+
+            <a href="{% url 'blog_page' slug='ImportanceOfArts' %}" class="blog-card" data-aos="fade-up" data-aos-duration="1500">
+                <div class="blog-img">
+                    <img src="{% static 'blogs/BlogsPhotos/Arts.jpg' %}" alt="Blog Post 2">
+                </div>
+                <div class="blog-content">
+                    <h2>Why Arts is Important?</h2>
+                    <h2 class="urdu-text">فن اہم کیوں ہے؟</h2>
+                </div>
+            </a>
+
+            <a href="{% url 'blog_page' slug='HumanEvolution' %}" class="blog-card" data-aos="fade-up" data-aos-duration="1500">
+                <div class="blog-img">
+                    <img src="{% static 'blogs/BlogsPhotos/evolution.jpg' %}" alt="Blog Post 3">
+                </div>
+                <div class="blog-content">
+                    <h2>Theory of Evolution</h2>
+                    <h2 class="urdu-text">نظریۂ ارتقاء</h2>
+                </div>
+            </a>
+
+            <a href="{% url 'blog_page' slug='Brief_Answers_To_Big_Questions' %}" class="blog-card" data-aos="fade-up" data-aos-duration="1500">
+                <div class="blog-img">
+                    <img src="{% static 'blogs/BlogsPhotos/book1.jpg' %}" alt="Blog Post 4">
+                </div>
+                <div class="blog-content">
+                    <h2>Brief Answers to the Big Questions</h2>
+                </div>
+            </a>
+
+            <a href="{% url 'blog_page' slug='Why_Philosophy_is_important' %}" class="blog-card" data-aos="fade-up" data-aos-duration="1500">
+                <div class="blog-img">
+                    <img src="{% static 'blogs/BlogsPhotos/Philospohy.jpeg' %}" alt="Blog Post 5">
+                </div>
+                <div class="blog-content">
+                    <h2>Why Philosophy is Important?</h2>
+                    <h2 class="urdu-text">فلسفہ اہم کیوں ہے؟</h2>
+                </div>
+            </a>
+
+            <a href="{% url 'blog_page' slug='Feminism' %}" class="blog-card" data-aos="fade-up" data-aos-duration="1500">
+                <div class="blog-img">
+                    <img src="{% static 'blogs/BlogsPhotos/WomenMarch.jpg' %}" alt="Blog Post 6">
+                </div>
+                <div class="blog-content">
+                    <h2>Feminism</h2>
+                    <h2 class="urdu-text">نسوانیت</h2>
+                </div>
+            </a>
+
+            <a href="{% url 'blog_page' slug='From_NonLiving_To_Living' %}" class="blog-card" data-aos="fade-up" data-aos-duration="1500">
+                <div class="blog-img">
+                    <img src="{% static 'blogs/BlogsPhotos/abiogensis.jpg' %}" alt="Blog Post 7">
+                </div>
+                <div class="blog-content">
+                    <h2>From Non-Living to Living</h2>
+                    <h2 class="urdu-text">غیر جاندار سے جاندار تک</h2>
+                </div>
+            </a>
+
+            <a href="{% url 'blog_page' slug='Why_Literature_is_Important' %}" class="blog-card" data-aos="fade-up" data-aos-duration="1500">
+                <div class="blog-img">
+                    <img src="{% static 'blogs/BlogsPhotos/Bookshelf.jpg' %}" alt="Blog Post 8">
+                </div>
+                <div class="blog-content">
+                    <h2>Why Literature is Important?</h2>
+                    <h2 class="urdu-text">ادب کیوں اہم ہے؟</h2>
+                </div>
+            </a>
+
+            <a href="{% url 'blog_page' slug='Our_Beloved_Earth' %}" class="blog-card" data-aos="fade-up" data-aos-duration="1500">
+                <div class="blog-img">
+                    <img src="{% static 'blogs/BlogsPhotos/Astronut.jpg' %}" alt="Blog Post 9">
+                </div>
+                <div class="blog-content">
+                    <h2>Our Beloved Earth</h2>
+                    <h2 class="urdu-text">ہماری محبوب زمین</h2>
+                </div>
+            </a>
+
+            <a href="{% url 'blog_page' slug='Why_History_Is_Important' %}" class="blog-card" data-aos="fade-up" data-aos-duration="1500">
+                <div class="blog-img">
+                    <img src="{% static 'blogs/BlogsPhotos/History3.jpg' %}" alt="Blog Post 10">
+                </div>
+                <div class="blog-content">
+                    <h2>Why History is Important?</h2>
+                    <h2 class="urdu-text">تاریخ کیوں اہم ہے؟</h2>
+                </div>
+            </a>
+
+            <a href="{% url 'blog_page' slug='The_Formation_of_Solar_System' %}" class="blog-card" data-aos="fade-up" data-aos-duration="1500">
+                <div class="blog-img">
+                    <img src="{% static 'blogs/BlogsPhotos/solar2.jfif' %}" alt="Blog Post 11">
+                </div>
+                <div class="blog-content">
+                    <h2>The Formation of Solar System</h2>
+                    <h2 class="urdu-text">شمسی نظام کی تشکیل</h2>
+                </div>
+            </a>
+
+            <a href="{% url 'blog_page' slug='The_Big_Bang_Singularity' %}" class="blog-card" data-aos="fade-up" data-aos-duration="1500">
+                <div class="blog-img">
+                    <img src="{% static 'blogs/BlogsPhotos/BigBang.jfif' %}" alt="Blog Post 12">
+                </div>
+                <div class="blog-content">
+                    <h2>The Singularity of Big Bang</h2>
+                    <h2 class="urdu-text">بگ بینگ کی وحدانیت</h2>
+                </div>
+            </a>
+
+            <a href="{% url 'blog_page' slug='what_is_science' %}" class="blog-card" data-aos="fade-up" data-aos-duration="1500">
+                <div class="blog-img">
+                    <img src="{% static 'blogs/BlogsPhotos/Science3.jfif' %}" alt="Blog Post 13">
+                </div>
+                <div class="blog-content">
+                    <h2>What is Science?</h2>
+                    <h2 class="urdu-text">سائنس کیا ہے؟</h2>
+                </div>
+            </a>
+
+        </div>
+    </div>
+</section>
+
+
+
+{% endblock body %}

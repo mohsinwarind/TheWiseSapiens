@@ -1,0 +1,250 @@
+body {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    background-color: #000000;
+    font-family: 'Ubuntu', sans-serif;
+    color: #fff;
+    background: url('/static/ngo/Wallpaper_lockscreen\ 1.png') no-repeat center center fixed;
+    background-size: cover;
+    background-position: center;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Events Section Styles */
+.events-section {
+    padding: 80px 0;
+    min-height: 70vh; /* Minimum height to ensure content visibility */
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-heading h2 {
+    font-size: 3.5rem; /* Larger base size */
+    font-weight: 700;
+    color: #8a8a8a;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+    text-transform: uppercase; /* Added for consistency */
+    letter-spacing: 2px;
+}
+
+.section-heading h2:hover {
+    color: #fff;
+}
+
+/* Event Card Styling */
+.event-card {
+    display: block;
+    border-radius: 15px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+    height: 100%; /* Equal height cards */
+    margin-bottom: 10px;
+    background-color: rgba(25, 25, 25, 0.7); /* Slightly visible background */
+}
+
+.event-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Event Card Image */
+.event-card-image {
+    width: 100%;
+    height: 220px; /* Fixed height for consistency */
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease-in-out;
+}
+
+.event-card:hover .event-card-image {
+    transform: scale(1.1);
+}
+
+/* Event Card Content */
+.event-card-content {
+    padding: 25px 20px;
+    background-color: rgba(65, 63, 63, 0.9);
+    min-height: 130px; /* Minimum height for consistency */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.event-card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    transition: color 0.3s ease-in-out;
+}
+
+.event-card-description {
+    font-size: 1rem;
+    color: #ccc;
+    transition: color 0.3s ease-in-out;
+    line-height: 1.5;
+}
+
+.event-card:hover .event-card-title {
+    color: #f5a623;
+}
+
+.event-card:hover .event-card-description {
+    color: #fff;
+}
+
+
+
+/* Responsive media queries */
+@media (max-width: 1200px) {
+    .section-heading h2 {
+        font-size: 3rem;
+    }
+    
+    .event-card-image {
+        height: 200px;
+    }
+    
+    .event-card-content {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 992px) {
+    .events-section {
+        padding: 60px 0;
+    }
+    
+    .section-heading h2 {
+        font-size: 2.5rem;
+    }
+    
+    .event-card-title {
+        font-size: 1.3rem;
+    }
+    
+    .signature-font {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .events-section {
+        padding: 40px 0;
+    }
+    
+    .section-heading h2 {
+        font-size: 2rem;
+    }
+    
+    .event-card-content {
+        padding: 15px;
+        min-height: 110px;
+    }
+    
+    .event-card-title {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+    
+    .event-card-description {
+        font-size: 0.9rem;
+    }
+    
+    .event-card-image {
+        height: 180px;
+    }
+    
+    .signature-font {
+        font-size: 1.5rem;
+    }
+    
+    /* Stack footer columns */
+    .footer-row {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .footer-col {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .footer {
+        min-height: 250px;
+    }
+}
+
+@media (max-width: 576px) {
+    .events-section {
+        padding: 30px 0;
+    }
+    
+    .section-heading h2 {
+        font-size: 1.8rem;
+    }
+    
+    .event-card-title {
+        font-size: 1.1rem;
+    }
+    
+    .event-card-description {
+        font-size: 0.85rem;
+    }
+    
+    .event-card-image {
+        height: 160px;
+    }
+    
+    .navbar-brand {
+        max-width: 70%;
+    }
+    
+    .logo {
+        height: 30px;
+    }
+    
+    .signature-font {
+        font-size: 1.3rem;
+    }
+    
+    /* Footer adjustments for mobile */
+    .footer {
+        min-height: 200px;
+    }
+    
+    .footer-col:not(:first-child) .footer-title,
+    .footer-col:not(:first-child) .footer-links {
+        display: none;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 400px) {
+    .section-heading h2 {
+        font-size: 1.5rem;
+    }
+    
+    .event-card-title {
+        font-size: 1rem;
+    }
+    
+    .event-card-description {
+        font-size: 0.8rem;
+    }
+    
+    .event-card-image {
+        height: 140px;
+    }
+    
+    .events-section {
+        padding: 20px 0;
+    }
+}

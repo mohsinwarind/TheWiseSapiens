@@ -1,0 +1,135 @@
+{% extends "ngo/base.html" %}
+{% load static %}
+{% block css %}
+
+<link rel="stylesheet" href="{% static "ngo/css/contact.css" %}">
+
+{% endblock css %}
+{% block body %}
+
+
+    <!-- Modal Structure -->
+    <div id="instructionModal" class="modal">
+        <div class="modal-content">
+            <h2>Instructions</h2>
+            <ul>
+                <li>Fill in the required details correctly, especially your email.</li>
+                <li>Select the desired submission type and provide the relevant details.</li>
+                <li>We will respond within a few days after your submission.</li>
+            </ul>
+            <button id="closeModalBtn">OK</button>
+        </div>
+    </div>
+
+    <div class="form-container" data-aos="fade-up" data-aos-duration="1500">
+        <h1>We are always here for you buddy &#10084;</h1>
+        <form action="https://formspree.io/f/movapbgn" method="POST" id="submissionForm">
+            <div class="form-section">
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name" placeholder="Your Full Name" required>
+            </div>
+
+            <div class="form-section">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" placeholder="Your Email Address" required>
+            </div>
+
+            <div class="form-section">
+                <label for="phone">Contact Number:</label>
+                <input type="tel" name="phone" id="phone" placeholder="Enter your contact number" required>
+            </div>
+
+            <div class="form-section">
+                <label for="submission-type">Submission Type:</label>
+                <select name="submission-type" id="submission-type" required>
+                    <option value="contact">General Contact</option>
+                    <option value="blog">Blog Submission</option>
+                    <option value="video">Video Submission</option>
+                    <option value="volunteer">Volunteership</option>
+                </select>
+            </div>
+
+            <div class="form-section">
+                <label for="message">Message:</label>
+                <textarea name="message" id="message" rows="6" placeholder="Your Message or Details" required></textarea>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <!-- Thank You Modal -->
+    <div id="thankYouModal" class="modal">
+        <div class="modal-content">
+            <h2>Thank You!</h2>
+            <p>Your submission has been received. We will get back to you shortly.</p>
+            <button id="closeThankYouModalBtn">OK</button>
+        </div>
+    </div>
+
+
+{% endblock body %}
+
+
+{% block script %}
+
+ <script>
+        window.onload = function() {
+            var modal = document.getElementById('instructionModal');
+            var closeModalBtn = document.getElementById('closeModalBtn');
+
+            modal.style.display = 'block';
+
+            closeModalBtn.onclick = function() {
+                modal.style.display = 'none';
+            };
+
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                }
+            };
+        };
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var form = document.getElementById('submissionForm');
+            var thankYouModal = document.getElementById('thankYouModal');
+            var closeThankYouModalBtn = document.getElementById('closeThankYouModalBtn');
+
+            form.addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent the default form submission
+
+                var formData = new FormData(form);
+
+                fetch(form.action, {
+                    method: form.method,
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                }).then(function(response) {
+                    if (response.ok) {
+                        thankYouModal.style.display = 'block';
+                    } else {
+                        alert('There was an issue with your submission. Please try again.');
+                    }
+                }).catch(function(error) {
+                    alert('There was an issue with your submission. Please try again.');
+                });
+            });
+
+            closeThankYouModalBtn.addEventListener('click', function() {
+                thankYouModal.style.display = 'none';
+                form.reset(); 
+            });
+
+            window.onclick = function(event) {
+                if (event.target == thankYouModal) {
+                    thankYouModal.style.display = 'none';
+                    form.reset();
+                }
+            };
+        });
+    </script>
+
+{% endblock script %}

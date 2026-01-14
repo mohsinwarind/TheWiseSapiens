@@ -1,0 +1,50 @@
+{% extends "ngo/base.html" %}
+{% load static %}
+{% block title %}
+<title>About</title>
+
+{% block css %}
+<link rel="stylesheet" href="{% static "ngo/css/about.css" %}">
+{% endblock css %}
+
+
+{% endblock title %}
+
+{% block body %}
+
+
+    <div class="main-container">
+        <!-- Left Image -->
+        <div class="left-image" data-aos="fade-right" data-aos-duration="1500">
+            <img src="{% static "ngo/TunelNegro.jfif" %}" alt="Left Image">
+        </div>
+
+        <!-- Content Wrapper -->
+        <div class="content-wrapper">
+            <!-- About Section -->
+            <div class="about-section" id="aboutus" data-aos="fade-left" data-aos-duration="1500">
+                <h1>About Us</h1>
+                <p>The Wise Sapiens is a non-profit organization dedicated to fostering enlightenment through dialogue,
+                    writing, and visual expression in a society which is being radicalized for decades. We aim to cover
+                    a broad spectrum of domains, starting from the facts of science to the mysteries of literature, to the
+                    tapestry of history, and extending to the beauty of art, as they all collectively contribute to a
+                    more rational and peaceful society we envisioned for.</p>
+                <p>We strive to unfold the complexities of the universe about which <b>Stephen Hawking</b> told us and
+                    shed light on the clandestine aspects of mother nature as described by <b>Carl Sagan</b> that govern
+                    our life and give purpose to our existence. You can be a part of this revolution, and we hope that
+                    through dedication, rigorous research, critical analysis, creative exploration, thoughtful analysis,
+                    artistic expression, literary analysis, and reflective study, we can make this society a heaven as
+                    promised by God, where pupils learn how to think, not what to think.</p>
+                <p class="quote"><i>"The important thing is not to stop questioning. Curiosity has its own reason for
+                        existing."</i><br>— <b>Albert Einstein</b></p>
+            </div>
+
+            <!-- Buttons -->
+            <div class="buttons">
+                <button><a href="contact.html">Fill Form</a></button>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock body %}

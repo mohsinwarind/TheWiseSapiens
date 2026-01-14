@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Learn about The Wise Sapiens, a non-profit dedicated to fostering enlightenment and rational thought through dialogue, art, literature, and science.">
+    <meta name="keywords" content="The Wise Sapiens, non-profit, enlightenment, science, literature, art, history, NGO">
+    <meta name="author" content="The Wise Sapiens">
+
+    <meta property="og:title" content="About Us - The Wise Sapiens">
+    <meta property="og:description"
+        content="Explore The Wise Sapiens' mission of promoting rational and peaceful discourse through various fields including science, literature, and art.">
+    <meta property="og:image" content="https://thewisesapiens.org/Templates/thewisesapienslogowithname.jpeg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://thewisesapiens.org/about.html"> 
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About Us - The Wise Sapiens">
+    <meta name="twitter:description" content="Join The Wise Sapiens in creating a thoughtful, informed society through science, art, literature, and critical analysis.">
+    <meta name="twitter:image" content="https://thewisesapiens.org/Templates/thewisesapienslogowithname.jpeg">
+{% block title %}
+
+{% endblock title %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "ngo/css/base.css" %}">
+    {% block css %}{% endblock css %}
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sassy+Frass&display=swap" rel="stylesheet">
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Icon -->
+    <link rel="shortcut icon" href="{% static "ngo/thewisesapienslogo.jpeg" %}" type="image/png">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="{% static "ngo/logo.png" %}" class="logo me-2" alt="Logo">
+                <span class="signature-font">The Wise Sapiens</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url "home" %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url "about" %}" id="active">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url "team" %}">Our Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url "blogs" %}">Blogs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url "events" %}">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url "contact" %}">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+{% block body %}
+
+
+{% endblock body %}
+
+
+
+    <section class="gap"></section>
+    <footer class="footer">
+        <!-- Video background -->
+        <video autoplay muted loop playsinline class="footer-video">
+            <source src="{% static "ngo/footer_video.mp4" %}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <!-- Footer content -->
+        <div class="footer-content container" data-aos="fade-up" data-aos-duration="1500">
+            <div class="footer-row">
+                <div class="footer-col">
+                    <img src="{% static "ngo/logo.png" %}" alt="Logo" class="footer-logo img-fluid">
+                    <h5 class="footer-title">NGO</h5>
+                    <p class="copyright">&copy; <script>document.write(new Date().getFullYear());</script> The Wise Sapiens. All rights reserved.</p>
+                </div>
+                <div class="footer-col">
+                    <h5 class="footer-title">Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="{% url "home" %}">Home</a></li>
+                        <li><a href="{% url "about" %}">About Us</a></li>
+                        <li><a href="OurTeam/OurTeam.html">Our Team</a></li>
+                        <li><a href="Blogs/blogs.html">Blogs</a></li>
+                        <li><a href="Events/events.html">Events</a></li>
+                        <li><a href="{% url "contact" %}">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h5 class="footer-title">Follow Us</h5>
+                    <ul class="footer-links">
+                        <li><a href="https://www.facebook.com/profile.php?id=61559677928360"
+                                target="_blank">Facebook</a></li>
+                        <li><a href="https://youtube.com/@mohsinramzan4980?si=_H45w7e1-k9TJO2A"
+                                target="_blank">YouTube</a></li>
+                        <li><a href="https://www.instagram.com/thewisesapiensofficial?igsh=djJrd2F2amZla2k4"
+                                target="_blank">Instagram</a></li>
+                        <li><a href="https://www.linkedin.com/company/the-wise-sapiens/" target="_blank">LinkedIn</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    {% block script %}{% endblock script %}
+    <script>
+        AOS.init();
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
