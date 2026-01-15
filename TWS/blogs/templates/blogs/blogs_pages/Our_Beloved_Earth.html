@@ -83,8 +83,8 @@
     </div>
     <!-- Navigation Buttons -->
     <div class="button-container">
-        <a href="Why_Literature_Is_Important.html" class="btn previous-button" role="button">Previous Article</a>
-        <a href="Why_History_Is_Important.html" class="btn next-button" role="button">Next Article</a>
+        <a href="{% url  'blog_page' slug="Why_Literature_is_Important" %}" class="btn previous-button" role="button">Previous Article</a>
+        <a href="{% url  'blog_page' slug="Why_History_Is_Important" %}" class="btn next-button" role="button">Next Article</a>
     </div>
     <!-- JS -->
     <script>

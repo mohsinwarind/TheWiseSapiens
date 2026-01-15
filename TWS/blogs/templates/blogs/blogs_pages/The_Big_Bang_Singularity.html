@@ -67,8 +67,8 @@
     </div>
     <!-- Navigation Buttons -->
     <div class="button-container">
-        <a href="The_Formation_of_Solar_System.html" class="btn previous-button" role="button">Previous Article</a>
-        <a href="what_is_science.html" class="btn next-button" role="button">Next Article</a>
+        <a href="{% url  'blog_page' slug="The_Formation_of_Solar_System" %}" class="btn previous-button" role="button">Previous Article</a>
+        <a href="{% url  'blog_page' slug="what_is_science" %}" class="btn next-button" role="button">Next Article</a>
     </div>
     <!-- JS -->
     <script>

@@ -76,8 +76,8 @@
     </div>
     <!-- Navigation Buttons -->
     <div class="button-container">
-        <a href="Why_Philosophy_is_important.html" class="btn previous-button" role="button">Previous Article</a>
-        <a href="From_NonLiving_To_Living.html" class="btn next-button" role="button">Next Article</a>
+        <a href="{% url   'blog_page'  slug="Why_Philosophy_is_important" %}" class="btn previous-button" role="button">Previous Article</a>
+        <a href="{% url  'blog_page' slug="From_NonLiving_To_Living" %}" class="btn next-button" role="button">Next Article</a>
     </div>
     <!-- JS -->
     <script>
