@@ -5,7 +5,7 @@ body {
     background-color: #000000;
     font-family: 'Ubuntu', sans-serif;
     color: #fff;
-    background: url('/static/ngo/Wallpaper_lockscreen\ 1.png') no-repeat center center fixed;
+    background: url('/static/ngo/event_background.png') no-repeat center center fixed;
     background-size: cover;
     background-position: center;
     overflow-x: hidden; /* Prevent horizontal scrolling */

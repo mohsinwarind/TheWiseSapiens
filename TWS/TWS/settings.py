@@ -52,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+WHITENOISE_MAX_AGE = 60 * 60 * 24 * 365  # 1 year
 
 ROOT_URLCONF = 'TWS.urls'
 

@@ -1,10 +1,39 @@
 {% extends "ngo/base.html" %}
 {% load static %}
+
+{% block title %}
+<title>Our Team</title>
+
+{% endblock title %}
 {% block css %}
 <link rel="stylesheet" href="{% static "ngo/css/team.css" %}">
 
 {% endblock css %}
 
+{% block metatags %}
+
+<meta name="description" content="Meet the dedicated team behind The Wise Sapiens NGO. Learn about our mission and the individuals driving our initiatives.">
+
+     <!-- Keywords for SEO -->
+     <meta name="keywords" content="The Wise Sapiens, NGO, team, about us, members, organization, social impact">
+ 
+     <!-- Author of the page -->
+     <meta name="author" content="The Wise Sapiens Team">
+ 
+     <!-- Open Graph data for social media sharing -->
+     <meta property="og:title" content="Our Team - The Wise Sapiens">
+     <meta property="og:description" content="Meet the dedicated team behind The Wise Sapiens NGO.">
+     <meta property="og:image" content="{% static "ngo/thewisesapienslogowithname.jpeg" %}">
+     <meta property="og:url" content="https://thewisesapiens.org/OurTeam/">
+ 
+     <!-- Twitter Card data -->
+     <meta name="twitter:card" content="summary_large_image">
+     <meta name="twitter:title" content="Our Team - The Wise Sapiens">
+     <meta name="twitter:description" content="Meet the dedicated team behind The Wise Sapiens NGO.">
+     <meta name="twitter:image" content="{% static "ngo/logo.png" %}">
+
+
+{% endblock metatags %}
 
 {% block body %}
 

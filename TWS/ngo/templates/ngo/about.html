@@ -1,14 +1,32 @@
 {% extends "ngo/base.html" %}
 {% load static %}
 {% block title %}
+
 <title>About</title>
+
+
+
+{% endblock title %}
+
+{% block metatags %}
+ <meta property="og:title" content="About Us - The Wise Sapiens">
+    <meta property="og:description"
+        content="Explore The Wise Sapiens' mission of promoting rational and peaceful discourse through various fields including science, literature, and art.">
+    <meta property="og:image" content="https://thewisesapiens.org/Templates/thewisesapienslogowithname.jpeg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://thewisesapiens.org/about.html"> 
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About Us - The Wise Sapiens">
+    <meta name="twitter:description" content="Join The Wise Sapiens in creating a thoughtful, informed society through science, art, literature, and critical analysis.">
+    <meta name="twitter:image" content="https://thewisesapiens.org/Templates/thewisesapienslogowithname.jpeg">
+
+{% endblock metatags %}
+
 
 {% block css %}
 <link rel="stylesheet" href="{% static "ngo/css/about.css" %}">
 {% endblock css %}
 
-
-{% endblock title %}
 
 {% block body %}
 

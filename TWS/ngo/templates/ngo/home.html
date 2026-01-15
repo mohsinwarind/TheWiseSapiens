@@ -1,8 +1,14 @@
 {% extends "ngo/base.html" %}
 {% load static %}
+
+{% block title %}The Wise Sapiens{% endblock title %}
 {% block css %}
 <link rel="stylesheet" href="{% static "ngo/css/home.css" %}">
 {% endblock css %}
+
+{% block metatags %}
+
+{% endblock metatags %}
 {% block body %}
  <!-- Hero section -->
     <section class="hero-section">
@@ -17,7 +23,7 @@
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12" data-aos="fade-left" data-aos-duration="1000">
                     <div class="earth-container">
-                        <img src="{% static "ngo/earthhh.gif" %}"  alt="Earth Image" class="earth-img img-fluid">
+                        <img src="{% static "ngo/earthhh.gif" %}"  alt="Earth Image" class="earth-img img-fluid" rel="preload" as="image">
                     </div>  
                 </div> 
             </div>
@@ -53,7 +59,7 @@
                 <div class="col-lg-4 col-md-6 col-sm-12 what-we-do-card">
                     <a href="Blogs/blogs.html" class="card-link">
                         <div class="card">
-                            <img src="{% static "ngo/blogs.png" %}" alt="Blogs" class="card-img">
+                            <img src="{% static "ngo/blogs.png" %}" alt="Blogs" class="card-img" rel="preload" as="image">
                             <div class="card-body">
                                 <h3 class="card-title">Blogs</h3>
                             </div>
@@ -67,7 +73,7 @@
                 <div class="col-lg-4 col-md-6 col-sm-12 what-we-do-card">
                     <a href="Events/events.html" class="card-link">
                         <div class="card">
-                            <img src="{% static "ngo/Events.png" %}" alt="Events" class="card-img">
+                            <img src="{% static "ngo/Events.png" %}" alt="Events" class="card-img" rel="preload" as="image">
                             <div class="card-body">
                                 <h3 class="card-title">Events</h3>
                             </div>
@@ -79,9 +85,9 @@
                 </div>
                 
                 <div class="col-lg-4 col-md-6 col-sm-12 what-we-do-card">
-                    <a href="https://youtube.com/@mohsinramzan4980?si=_H45w7e1-k9TJO2A" class="card-link">
+                    <a href="https://youtube.com/@mohsinramzan4980?si=_H45w7e1-k9TJO2A" class="card-link" >
                         <div class="card">
-                            <img src="{% static "ngo/Camera.jpg" %}" alt="Media" class="card-img">
+                            <img src="{% static "ngo/Camera.jpg" %}" alt="Media" class="card-img" rel="preload" as="image">
                             <div class="card-body">
                                 <h3 class="card-title">Media</h3>
                             </div>

@@ -1,8 +1,31 @@
 {% extends "ngo/base.html" %}
 {% load static %}
+
+
+{% block title %}<title>Blogs</title>{% endblock title %}
 {% block css %}
  <link rel="stylesheet" href="{% static "blogs/css/blogs.css" %}">
 {% endblock css %}
+
+
+{% block metatags %}
+  <meta name="description" content="Explore blogs on science, art, and history by The Wise Sapiens, a non-profit fostering enlightenment through literature and critical thinking.">
+    <meta name="keywords" content="The Wise Sapiens, blogs, science, art, history, literature, NGO">
+    <meta name="author" content="The Wise Sapiens">
+    <meta property="og:title" content="Blogs - The Wise Sapiens">
+    <meta property="og:description"content="Discover thought-provoking blogs on science, art, and history from The Wise Sapiens, promoting enlightenment and rational discourse.">
+    <meta property="og:image" content="{% static "ngo/thewisesapienslogowithname.jpeg" %}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://thewisesapiens.org/Blogs/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Blogs - The Wise Sapiens">
+    <meta name="twitter:description" content="Join The Wise Sapiens in exploring enlightening blogs on science, art, and history, inspiring a thoughtful and informed society.">
+    <meta name="twitter:image" content="https://www.thewisesapiens.org/static/ngo/thewisesapienslogowithname.jpeg">
+
+
+{% endblock metatags %}
+
+
 
 {% block body %}
 <section class="blog-section">

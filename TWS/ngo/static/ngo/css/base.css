@@ -25,11 +25,16 @@
     font-size: 2rem; /* Responsive font size */
 }
 
-#active {
+.nav-link {
+    border-bottom: 2px solid transparent;
+}
+
+.nav-link.active {
     color: #fefeff;
     font-weight: bold;
-    border-bottom: 2px solid #939191;
+    border-bottom-color: #939191;
 }
+
 
 .navbar-nav .nav-link {
     color: white;

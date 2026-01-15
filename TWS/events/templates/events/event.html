@@ -1,10 +1,25 @@
 {% extends "ngo/base.html" %}
-{% block css %}
+
 {% load static %}
+
+{% block title %}<title>Events</title>{% endblock title %}
+{% block css %}
 <link rel="stylesheet" href="{% static "events/css/event.css" %}">
 
 {% endblock css %}
 
+{% block metatags %}
+<meta name="description" content="Explore exciting events hosted by The Wise Sapiens. Join us for creative web design, hackathons, and more to unleash your imagination!">
+    <meta name="keywords" content="events, hackathons, web design, creative, The Wise Sapiens">
+    <meta name="author" content="The Wise Sapiens">
+    <meta property="og:title" content="Events - The Wise Sapiens">
+    <meta property="og:description" content="Join our events, including Code Conquest II and Code Conquest I, to enhance your skills in web design and programming!">
+    <meta property="og:image" content="{% static "ngo/thewisesapienslogowithname.jpeg" %}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://thewisesapiens.org/Events/">
+
+
+{% endblock metatags %}
 {% block body %}
 
     <section id="events" class="events-section">

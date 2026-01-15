@@ -8,23 +8,22 @@
         content="Learn about The Wise Sapiens, a non-profit dedicated to fostering enlightenment and rational thought through dialogue, art, literature, and science.">
     <meta name="keywords" content="The Wise Sapiens, non-profit, enlightenment, science, literature, art, history, NGO">
     <meta name="author" content="The Wise Sapiens">
+    <meta property="og:title" content="The Wise Sapiens - Fostering Enlightenment">
+     <meta property="og:description" content="Join us to cultivate critical thinking and intellectual curiosity across science, literature, and the arts!">
+     <meta property="og:image" content="{% static "ngo/thewisesapienslogowithname.jpeg" %}">
+     <meta property="og:url" content="https://thewisesapiens.org/">
+     <meta name="twitter:card" content="summary_large_image">
 
-    <meta property="og:title" content="About Us - The Wise Sapiens">
-    <meta property="og:description"
-        content="Explore The Wise Sapiens' mission of promoting rational and peaceful discourse through various fields including science, literature, and art.">
-    <meta property="og:image" content="https://thewisesapiens.org/Templates/thewisesapienslogowithname.jpeg">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://thewisesapiens.org/about.html"> 
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="About Us - The Wise Sapiens">
-    <meta name="twitter:description" content="Join The Wise Sapiens in creating a thoughtful, informed society through science, art, literature, and critical analysis.">
-    <meta name="twitter:image" content="https://thewisesapiens.org/Templates/thewisesapienslogowithname.jpeg">
+   
 {% block title %}
 
 {% endblock title %}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{% static "ngo/css/base.css" %}">
     {% block css %}{% endblock css %}
+
+    {% block metatags %}{% endblock metatags %}
+
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,7 +41,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="{% static "ngo/logo.png" %}" class="logo me-2" alt="Logo">
+                <img src="{% static "ngo/logo.png" %}" class="logo me-2" rel="preload" as="image" alt="Logo">
                 <span class="signature-font">The Wise Sapiens</span>
             </a>
             
@@ -53,25 +52,38 @@
 
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url "home" %}">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url "about" %}" id="active">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url "team" %}">Our Team</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url "blogs" %}">Blogs</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url "events" %}">Events</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url "contact" %}">Contact</a>
-                    </li>
-                </ul>
+    <li class="nav-item">
+        <a class="nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}"
+           href="{% url 'home' %}">Home</a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link {% if request.resolver_match.url_name == 'about' %}active{% endif %}"
+           href="{% url 'about' %}">About Us</a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link {% if request.resolver_match.url_name == 'team' %}active{% endif %}"
+           href="{% url 'team' %}">Our Team</a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link {% if request.resolver_match.url_name == 'blogs' %}active{% endif %}"
+           href="{% url 'blogs' %}">Blogs</a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link {% if request.resolver_match.url_name == 'events' %}active{% endif %}"
+           href="{% url 'events' %}">Events</a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link {% if request.resolver_match.url_name == 'contact' %}active{% endif %}"
+           href="{% url 'contact' %}">Contact</a>
+    </li>
+</ul>
+
+
             </div>
         </div>
     </nav>
@@ -88,7 +100,7 @@
     <footer class="footer">
         <!-- Video background -->
         <video autoplay muted loop playsinline class="footer-video">
-            <source src="{% static "ngo/footer_video.mp4" %}" type="video/mp4">
+            <source src="{% static "ngo/footer_video.mp4" %}" type="video/mp4" >
             Your browser does not support the video tag.
         </video>
 
@@ -105,9 +117,9 @@
                     <ul class="footer-links">
                         <li><a href="{% url "home" %}">Home</a></li>
                         <li><a href="{% url "about" %}">About Us</a></li>
-                        <li><a href="OurTeam/OurTeam.html">Our Team</a></li>
-                        <li><a href="Blogs/blogs.html">Blogs</a></li>
-                        <li><a href="Events/events.html">Events</a></li>
+                        <li><a href="{% url "team" %}">Our Team</a></li>
+                        <li><a href="{% url "blogs" %}">Blogs</a></li>
+                        <li><a href="{% url "events" %}">Events</a></li>
                         <li><a href="{% url "contact" %}">Contact</a></li>
                     </ul>
                 </div>
