@@ -1,11 +1,26 @@
 /* Base styles */
+:root {
+    --bg: #050507;
+    --panel: rgba(18, 18, 22, 0.82);
+    --accent: #58d68d;
+    --muted: #cfd2dc;
+    --card-border: rgba(255, 255, 255, 0.08);
+    --shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
+}
+
 body {
-    background-color: black;
+    background: radial-gradient(circle at 20% 20%, rgba(88, 214, 141, 0.08), transparent 30%), radial-gradient(circle at 80% 0%, rgba(77, 127, 255, 0.1), transparent 28%), var(--bg);
     font-family: 'Ubuntu', sans-serif;
+    color: var(--muted);
     user-select: none;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+}
+
+.content-container {
+    width: min(1200px, 90%);
+    margin: 0 auto;
 }
 
 
@@ -20,22 +35,35 @@ body {
     background-position: center;
     color: white;
     padding: 40px 0;
+    position: relative;
+    isolation: isolate;
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(5, 5, 7, 0.9) 40%, rgba(5, 5, 7, 0.5) 70%, rgba(5, 5, 7, 0.25));
+    z-index: -1;
 }
 
 .hero-text-col {
     width: 100%;
-    max-width: 500px;
+    max-width: 520px;
 }
 
 .hero-heading {
     font-size: 2.75rem;
     font-weight: 700;
     margin-bottom: 1rem;
+    color: #f7f8fb;
+    letter-spacing: 0.02em;
 }
 
 .hero-para {
     font-size: 1.625rem;
     margin-bottom: 1.5rem;
+    color: var(--muted);
 }
 
 .hero-btn-main {
@@ -46,6 +74,7 @@ body {
     padding: 12px 24px;
     border-radius: 30px;
     transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
 .hero-btn-main:hover {
@@ -59,11 +88,16 @@ body {
 .earth-container {
     text-align: center;
     overflow: hidden;
+    max-width: 520px;
+    margin: 0 auto;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
 }
 
 .earth-img {
     max-width: 100%;
     transition: transform 0.5s ease;
+    display: block;
 }
 
 .earth-img:hover {
@@ -77,6 +111,7 @@ body {
     align-items: center;
     padding: 60px 0;
     color: white;
+    background: linear-gradient(180deg, rgba(18, 18, 22, 0.9), rgba(5, 5, 7, 0.9));
 }
 
 .who-we-are-image {
@@ -84,16 +119,28 @@ body {
     max-width: 300px;
     margin: 0 auto;
     transition: transform 0.3s ease;
+    background: var(--panel);
+    padding: 14px;
+    border-radius: 18px;
+    border: 1px solid var(--card-border);
+    box-shadow: var(--shadow);
 }
 
 .who-we-are-image:hover {
     transform: scale(1.05);
 }
 
+.who-we-are-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 .description-para {
     font-size: 1.0625rem;
     line-height: 1.6;
     margin-bottom: 1.5rem;
+    color: var(--muted);
 }
 
 .button-group {
@@ -123,11 +170,22 @@ body {
     background-position: center;
     color: white;
     padding: 60px 0;
+    position: relative;
+    isolation: isolate;
+}
+
+.what-we-do-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(5, 5, 7, 0.88), rgba(5, 5, 7, 0.92));
+    z-index: -1;
 }
 
 .what-we-do-card {
     padding: 20px;
     transition: transform 0.5s ease;
+    height: 100%;
 }
 
 .what-we-do-card:hover {
@@ -145,25 +203,30 @@ body {
 .card {
     position: relative;
     overflow: hidden;
-    border: none;
-    background-color: #000000;
-    border-radius: 10px;
+    border: 1px solid var(--card-border);
+    background-color: rgba(9, 9, 12, 0.7);
+    border-radius: 14px;
     margin-bottom: 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow);
     transition: transform 0.3s ease;
     height: 100%;
+    backdrop-filter: blur(8px);
 }
 
 .card:hover {
     transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 16px 38px rgba(0, 0, 0, 0.35);
 }
 
 .card-img {
     width: 100%;
-    height: 200px;
+    aspect-ratio: 4 / 3;
+    height: auto;
     object-fit: cover;
+    object-position: center;
     display: block;
+    border-radius: 12px 12px 0 0;
+    background-color: #0d0d10;
 }
 
 .card-title {
@@ -172,15 +235,15 @@ body {
     margin: 0;
     padding: 15px;
     color: white;
-    background-color: #252526;
-    border-radius: 0 0 10px 10px;
+    background-color: rgba(37, 37, 38, 0.95);
+    border-radius: 0 0 12px 12px;
     position: relative;
     z-index: 2;
     transition: background-color 0.3s ease;
 }
 
 .card:hover .card-title {
-    background-color: #000000;
+    background-color: rgba(0, 0, 0, 0.95);
     border: 1px solid rgb(179, 177, 177);
 }
 
@@ -199,8 +262,9 @@ body {
     opacity: 0;
     transition: opacity 0.5s ease;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 12px;
     z-index: 1;
+    backdrop-filter: blur(6px);
 }
 
 .card:hover .card-overlay {
@@ -210,6 +274,23 @@ body {
 .card-overlay p {
     font-size: 1rem;
     line-height: 1.5;
+}
+
+.stats-section {
+    padding: 60px 0;
+    color: #fff;
+    background: radial-gradient(circle at 10% 10%, rgba(88, 214, 141, 0.1), transparent 30%), rgba(7, 7, 10, 0.95);
+    border-top: 1px solid var(--card-border);
+    border-bottom: 1px solid var(--card-border);
+}
+
+.stats-section h3 {
+    color: #ffffff;
+}
+
+.stats-section p {
+    font-size: 1.2rem;
+    color: #ccc;
 }
 
 
@@ -231,19 +312,6 @@ body {
     .signature-font {
         font-size: 2.3rem;
     }
-}
-
-.stats-section {
-    /* background-color: #000000; */
-    padding: 60px 0;
-    color: #fff;
-}
-.stats-section h3 {
-    color: #ffffff;
-}
-.stats-section p {
-    font-size: 1.2rem;
-    color: #ccc;
 }
 
 /* Medium devices (tablets, less than 992px) */
@@ -313,10 +381,6 @@ body {
         padding: 15px;
     }
     
-    .card-img {
-        height: 180px;
-    }
-    
     .card-title {
         font-size: 1.2rem;
         padding: 10px;
@@ -334,8 +398,16 @@ body {
 
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
+    .hero-section {
+        min-height: auto;
+        padding: 60px 0 50px;
+        text-align: center;
+        overflow: hidden;
+    }
+
     .hero-text-col {
         text-align: center;
+        margin: 0 auto;
     }
     
     .hero-heading {
@@ -349,6 +421,10 @@ body {
     .hero-btn-main {
         font-size: 1rem;
         padding: 8px 16px;
+        width: 100%;
+        max-width: 260px;
+        border-radius: 999px;
+        display: inline-block;
     }
     
     .description-para {
@@ -357,14 +433,38 @@ body {
     
     .who-we-are-image {
         width: 50%;
+        margin: 0 auto 20px;
     }
     
     .signature-font {
         font-size: 1.7rem;
     }
+
+    .earth-container {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        max-width: 280px;
+    }
     
-    .card-img {
-        height: 160px;
+    .earth-img {
+        width: 75%;
+        margin: 0 auto;
+    }
+
+    .who-we-are-section {
+        text-align: center;
+    }
+
+    .button-group {
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .button-group .hero-btn-main {
+        max-width: 280px;
+        border-radius: 999px;
     }
     
     .card-title {
@@ -406,10 +506,6 @@ body {
     .navbar-logo {
         width: 45px;
         height: 45px;
-    }
-    
-    .card-img {
-        height: 140px;
     }
     
     .card-title {
