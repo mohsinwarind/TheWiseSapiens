@@ -119,11 +119,11 @@ body {
     max-width: 300px;
     margin: 0 auto;
     transition: transform 0.3s ease;
-    background: var(--panel);
+    background: transparent;
     padding: 14px;
     border-radius: 18px;
-    border: 1px solid var(--card-border);
-    box-shadow: var(--shadow);
+    border: none;
+    box-shadow: none;
 }
 
 .who-we-are-image:hover {
