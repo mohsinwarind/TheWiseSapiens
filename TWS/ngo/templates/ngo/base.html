@@ -62,10 +62,10 @@
            href="{% url 'about' %}">About Us</a>
     </li>
 
-    <li class="nav-item">
+    {% comment %} <li class="nav-item">
         <a class="nav-link {% if request.resolver_match.url_name == 'team' %}active{% endif %}"
            href="{% url 'team' %}">Our Team</a>
-    </li>
+    </li> {% endcomment %}
 
     <li class="nav-item">
         <a class="nav-link {% if request.resolver_match.url_name == 'blogs' %}active{% endif %}"
@@ -117,7 +117,7 @@
                     <ul class="footer-links">
                         <li><a href="{% url "home" %}">Home</a></li>
                         <li><a href="{% url "about" %}">About Us</a></li>
-                        <li><a href="{% url "team" %}">Our Team</a></li>
+                        {% comment %} <li><a href="{% url "team" %}">Our Team</a></li> {% endcomment %}
                         <li><a href="{% url "blogs" %}">Blogs</a></li>
                         <li><a href="{% url "events" %}">Events</a></li>
                         <li><a href="{% url "contact" %}">Contact</a></li>

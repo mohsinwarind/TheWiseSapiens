@@ -17,7 +17,9 @@ body {
     padding: 0;
     overflow-x: hidden;
 }
-
+.navbar{
+    background-color: #050507 !important;
+}
 .content-container {
     width: min(1200px, 90%);
     margin: 0 auto;
