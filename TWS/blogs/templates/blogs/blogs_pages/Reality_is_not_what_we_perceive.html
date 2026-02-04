@@ -1,0 +1,75 @@
+{% extends "blogs/base.html" %}
+{% load static %}
+
+{% block title %}
+    <title>Reality is not what we percieve</title>
+
+{% endblock title %}
+   
+
+{% block metatags %}
+    <!-- Meta Tags -->
+
+   <meta name="description" content="A philosophical and scientific exploration of reality, time, entropy, quantum uncertainty, and human insignificance in the vast universe. Questioning absolute truth through modern physics.">
+
+<meta name="keywords" content="Reality, Time Relativity, Quantum Uncertainty, Entropy, Space-Time, Modern Physics, Philosophy of Science, Human Insignificance, Universe, The Wise Sapiens, Wise Sapiens, Non-Profit Organization, NGO, Sapiens, Mohsin Ramzan">
+
+    <meta name="author" content="Mohsin Ramzan">
+
+    <!-- Open Graph meta tags for social media sharing -->
+<meta property="og:title" content="Reality Is Not What You Perceive">
+<meta property="og:description" content="A deep reflection on time, entropy, quantum uncertainty, and the illusion of absolute truth in a universe far stranger than our perceptions.">
+
+<meta property="og:image" content="https://www.thewisesapiens.org/static/ngo/logo.png">
+<meta property="og:url" content="https://thewisesapiens.org/blogs/Reality_is_not_what_we_perceive/">
+
+{% endblock metatags %}
+
+{% block heading %}Reality is not what we Perceive{% endblock heading %}
+
+{% block language_option %}{% endblock language_option %}
+{% block body %}
+        <p id="paragraph1">
+            It's really a paradoxical concept to question reality because of its relative nature. Take the theory of relativity, which was proposed by Albert Einstein a few decades ago, where he stated that time is not something absolute but varies with speed and gravity. If we bother to look into its depth, we will realize that the fourth dimension that legitimizes our existence isn't something absolute to be relied upon. So, if our existence is relatively questionable, then how can our perception of life be absolute?
+
+        </p>
+
+
+        
+        <p id="paragraph2">
+            Now, this is what we are going to discuss today, because at night, when the sun has faded away in the west and the moon has covered the sky, you can sense the vastness of our universe. Billions of galaxies, stars, and planets yell at our insignificance from a distance of millions of light-years away. The cosmic microwave background radiation, which we capture in space, gives us a reminder of how limited and brief our own yardstick of ourselves and this planet is. Yet, amidst these crumbling sandcastles, aging bodies, and fading civilizations—where chaos is inevitable and permanence is an illusion—we seek order, when all we have is entropy. No matter how much these classical laws of physics seem deterministic, they all fall apart at the quantum level. That's why Heisenberg and his uncertainty principle were right because the laws have become probabilistic rather than absolute.
+
+
+        </p>
+
+        
+
+            <div class="image-container">
+            <img src="{% static "blogs/BlogsPhotos/BigBang1.jpg" %}" alt="Big Bang Image Image" class="img-fluid my-3"> <!-- Add margin if needed -->
+        </div>
+
+       
+        <p id="paragraph3">
+           Even if we argue about our physical essence, which can be considered an absolute entity given the predefined nature of matter, but at the microscopic or quantum level, every matter in this universe is made up of atoms, which are mostly empty spaces. Nuclei are tiny compared to the space electrons occupy, and reality is mostly void, yet we perceive solidity. It's our sensory illusion that makes us think the dark space at night is empty, when it is filled with dark matter we are not aware of. And probably that is why we can consider the absurd example of Erwin Schrödinger's cat, which states that the cat enclosed in a box can be both dead and alive, but it will be certain only when we interact with it. Likewise, reality is also relative, until it is observed with a relative frame of reference.
+        </p>
+        <div class="image-container">
+            <img src="{% static "blogs/BlogsPhotos/BigBang2.jfif" %}" alt="Science Image" class="img-fluid my-3"> <!-- Add margin if needed -->
+        </div>
+        <p id="paragraph4">
+            
+        Thus, if there are no absolute laws and principles in objective science, how can there be absolute and rigid subjective beliefs? My prefrontal cortex is unable to comprehend how we humans can be so sure of our deeds and justify them by any relative means. We may never get to know who we are because in essence we are not we (you can refer to this blog for more details), and we may never find any truth because there is none. So, it’s high time to accept our ignorance and hold onto each other without getting concerned about the subjective and relative beliefs anyone possesses, because at the end of the day, nothing actually matters, and even arguing about this is insignificant too.   
+        <div class="divider"></div>
+    </p>
+    <p class="credits" id="credit">
+        Author and Researcher: <a class="credits-link" href="https://www.instagram.com/writtenbymohsin/">Mohsin Ramzan</a> 
+        <div class="divider"></div>
+    </p>
+    
+    </div>
+    <!-- Navigation Buttons -->
+    <div class="button-container">
+        <a href="{% url 'blog_page' slug='HumanEvolution' %}" class="btn previous-button" role="button">Previous Article</a>
+        <a href="{% url 'blog_page' slug='TheoryofRelativity' %}" class="btn next-button" role="button">Next Article</a>
+    </div>
+   
+    {% endblock body %}
