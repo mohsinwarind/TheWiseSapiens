@@ -187,9 +187,9 @@ body {
     height: 100%;
 }
 
-.what-we-do-card:hover {
+/* .what-we-do-card:hover {
     transform: scale(1.05);
-}
+} */
 
 /* Card styles */
 .card-link {
@@ -213,7 +213,7 @@ body {
 }
 
 .card:hover {
-    transform: scale(1.05);
+    /* transform: scale(1.05); */
     box-shadow: 0 16px 38px rgba(0, 0, 0, 0.35);
 }
 
