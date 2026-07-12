@@ -57,7 +57,7 @@
             <h2 class="text-center hero-heading" data-aos="fade-down" data-aos-duration="1000">What We Do</h2>
             <div class="row" data-aos="fade-up" data-aos-duration="1000">
                 <div class="col-lg-4 col-md-6 col-sm-12 what-we-do-card">
-                    <a href="Blogs/blogs.html" class="card-link">
+                    <a href="{% url "blogs" %}" class="card-link">
                         <div class="card">
                             <img src="{% static "ngo/blogs.png" %}" alt="Blogs" class="card-img" rel="preload" as="image">
                             <div class="card-body">
@@ -71,7 +71,7 @@
                 </div>
                 
                 <div class="col-lg-4 col-md-6 col-sm-12 what-we-do-card">
-                    <a href="Events/events.html" class="card-link">
+                    <a href="{% url "events" %}" class="card-link">
                         <div class="card">
                             <img src="{% static "ngo/Events.png" %}" alt="Events" class="card-img" rel="preload" as="image">
                             <div class="card-body">
