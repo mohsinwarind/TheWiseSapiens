@@ -30,6 +30,36 @@ p{
 .navbar img{
     max-width: 40px;
 }
+
+blockquote {
+    margin: 20px 40px;
+    padding: 15px 20px;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    border-left: 4px solid;
+    color: #ddd;              /* Dark mode text */
+    border-left: 4px solid #ccc;
+}
+
+body.light blockquote {
+    color: #000;              /* Light mode text */
+    border-left: 4px solid #555;
+}
+ul {
+    margin: 20px 40px;
+    padding-left: 20px;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: #ddd; /* Dark mode */
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+body.light ul {
+    color: #000; /* Light mode */
+}
 .content {
     margin-top:40px;
     padding: 40px;
