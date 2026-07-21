@@ -178,8 +178,15 @@ body.light .navbar .checkbox-label {
     h1{
         font-size: 35px;
     }
+    ul{
+        font-size:small;
+        margin: 10px 14px;
+        padding: 12px;
+    }
     blockquote {
         font-size: small;
+        margin: 15px 16px;
+        padding: 12px 16px;
     }
     body.light blockquote {
     color: #000;              
