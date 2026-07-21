@@ -33,6 +33,15 @@
         <h1 class="section-heading">Our Blogs</h1>
         <div class="blog-grid">
 
+             <a href="{% url 'blog_page' slug='essence_of_life' %}" class="blog-card" data-aos="fade-up" data-aos-duration="1500">
+                <div class="blog-img">
+                    <img src="{% static 'blogs/BlogsPhotos/essence.jpeg' %}" alt="Blog Post 3">
+                </div>
+                <div class="blog-content">
+                    <h2>Essence of Life</h2>
+                </div>
+            </a>
+
                <a href="{% url 'blog_page' slug='Beyond_Survival_of_the_Fittest' %}" class="blog-card" data-aos="fade-up" data-aos-duration="1500">
                 <div class="blog-img">
                     <img src="{% static 'blogs/BlogsPhotos/beyond_Survival.jpeg' %}" alt="Blog Post 3">
