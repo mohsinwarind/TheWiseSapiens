@@ -178,9 +178,12 @@ body.light .navbar .checkbox-label {
     h1{
         font-size: 35px;
     }
+    blockquote {
+        font-size: small;
+    }
     body.light blockquote {
     color: #000;              
-    
+    font-size: small;
 }
 }
 
