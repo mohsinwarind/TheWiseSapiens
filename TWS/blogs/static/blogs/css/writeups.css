@@ -178,6 +178,10 @@ body.light .navbar .checkbox-label {
     h1{
         font-size: 35px;
     }
+    body.light blockquote {
+    color: #000;              
+    
+}
 }
 
 .checkbox {
