@@ -21,6 +21,10 @@ from django.conf.urls.static import static
 from django.conf.urls import handler404
 handler404 = "TWS.views.custom_404_view"
 
+# handler404 = 'TWS.views.error_404'
+# handler500 = 'TWS.views.error_500'
+# handler403 = 'TWS.views.error_403'
+# handler400 = 'TWS.views.error_400'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('ngo.urls')),

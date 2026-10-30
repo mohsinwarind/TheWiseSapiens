@@ -33,6 +33,9 @@ def custom_404_view(request, exception):
     <h1>Oppos :( </h1>
     <p>There is nothing here , dude! </p>
     <a href="/">Go back to home please</a>
+
+    <br><br>
+    <h3><a href="/blogs">Or if you end up here looking for the blogs , tap here on this line , we will take you back where you belongs</a></h3>
   </div>
 </body>
 </html>

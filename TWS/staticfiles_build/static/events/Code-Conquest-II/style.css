@@ -1,0 +1,366 @@
+body{
+    margin: 0;
+    background-color: #111017;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#background-video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.overlay {
+    position: relative;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.5); /* Optional: to make content more readable */
+    padding: 20px;
+}
+
+.bg-image {
+    position: relative;
+    z-index: 1;
+}
+
+/* Navbar */
+.navbar{
+    color: white;
+}
+
+.nav-background{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.nav-max-width{
+    width: 98%;
+    max-width: 1300px;
+    margin: auto;
+}
+
+.site-title{
+    color: white;
+    font-family: cursive;
+}
+
+.nav-item a{
+    color: white;
+}
+
+.nav-item a:hover{
+    color: #575A63;
+}
+
+/* MainPart */
+
+.bg-image{
+    background-image: url('./assets/home.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+}
+
+.overlay{
+    /* background: rgba(15, 15, 15, 0.217); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 92%;
+}
+
+/* About */
+
+.max-width{
+    width: 98%;
+    max-width: 1300px;
+    margin: auto;
+}
+
+
+/* Navigation Bar */
+
+.code-text{
+    background-color: #1e1e1eac;
+    border-radius: 15px;
+}
+
+.layer-2{
+    padding-left: 30px;
+}
+
+.layer-3{
+    padding-left: 60px;
+}
+
+
+.typewriter {
+    display: inline; /* Ensures the container's width fits its content */
+    letter-spacing: .15em; /* Adds some spacing between letters */
+    position: relative; /* Allows positioning of the pseudo-element */
+    white-space: normal; /* Allows the text to wrap */
+    word-break: break-word; /* Breaks long words to prevent overflow */
+}
+
+.typewriter::after {
+    content: ''; /* Empty content for the pseudo-element */
+    position: absolute; /* Positions relative to the .typewriter */
+    border-right: .15em solid orange; /* The cursor effect */
+    animation: blink-caret .75s step-end infinite; /* Blink animation for cursor */
+    height: 1em; /* Adjust to fit the text size */
+    left: 100%; /* Moves the cursor to the end of the text */
+    margin-left: 0.1em; /* Optional: Adds a small space between the text and the cursor */
+}
+
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: orange;
+    }
+}
+
+.container {
+    width: 100%; /* Ensure the container spans full width */
+    max-width: none; /* Disable max-width restriction */
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.about-section {
+    padding: 100px 0; /* Adjust padding as needed */
+    color: #ffffff;
+    width: 100%; /* Ensure the section spans full width */
+}
+
+/* Adjust code block styles */
+.about-section pre {
+    background-color: #1e1e1e;
+    padding: 20px;
+    color: #ffffff;
+    border-radius: 10px;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1em;
+    overflow-x: auto; /* Enable horizontal scrolling if needed */
+    width: 100%; /* Ensure the code block expands to full width */
+}
+
+/* Schedule Section */
+.schedule-image img {
+    /* max-width: 100%; */
+    width: auto;
+    height: auto;
+    display: flex;
+    margin: auto;
+    height: 100vh;
+    position: relative;
+    z-index: 1;
+    object-fit: cover;
+    object-position: center;
+    margin-top: -70px;
+    margin-bottom: -70px;
+    
+
+}
+
+
+
+/* Signup Section */
+.signup-section {
+    padding: 100px 0; /* Adjust padding as needed */
+}
+
+.signup-heading {
+    font-size: 36px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+.circle {
+    width: 300px;
+    height: 300px;
+    border : 1px solid rgb(64, 60, 60);
+    background-color:  #111017; /* Blue color for the circle */
+    border-radius: 50%; /* Make it circular */
+    margin: 30px auto; /* Center the circle horizontally and add some margin */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-signup {
+    font-size: 24px;
+    padding: 15px 30px;
+    border-radius: 50px;
+    background-color: #1c1616; /* White background for the button */
+    color: #dfe1e2; /* Blue text color for the button */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-signup:hover {
+    background-color: #000000; /* Darker blue on hover */
+    color: #ffffff; /* White text color on hover */
+}
+/* FAQs Section */
+.faqs-section {
+    padding: 100px 0; /* Adjust padding as needed */
+   
+}
+
+.faqs-heading {
+    font-size: 36px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+.faqs-list {
+    width: 100%;
+}
+
+.faqs-container {
+    position: relative; /* Added position relative to container */
+}
+
+.faq-item {
+    margin-bottom: 30px; /* Add some space between FAQ items */
+    position: relative; /* Ensure relative positioning */
+    padding: 20px; /* Add padding for better spacing */
+    background-color: #212121; /* Assuming a background color for FAQ items */
+    border-radius: 5px; /* Adding rounded corners */
+    z-index: 1; /* Ensure FAQ items are displayed above other elements */
+}
+
+.faq-item .answer{
+    padding-top: 5px;
+    padding-bottom: 3px;
+}
+
+.faqs-overlay {
+    display: none; /* Hide the overlay by default */
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%); /* Center the overlay horizontally */
+    background-color: rgba(150, 132, 132, 0.5); /* Semi-transparent black overlay */
+    width: 100%; /* Adjust the width of the overlay */
+    height: 100%; /* Ensure overlay covers the whole FAQ item */
+    z-index: 0; /* Ensure it stays behind the FAQ content */
+}
+
+.faq-item:hover .faqs-overlay {
+    display: block; /* Show the overlay on hover */
+}
+
+
+.question {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.answer {
+    display: none; /* Hide the answers by default */
+    font-size: 18px;
+    color: #ffffff;
+}
+
+/* Show the answer when the question is clicked */
+.question.active + .answer {
+    display: block;
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 100px 0; /* Adjust padding as needed */
+}
+
+.contact-heading {
+    font-size: 36px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+.contact-form {
+    background-color: rgba(255, 255, 255, 0.1); 
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.contact-form label {
+    color: #ffffff;
+}
+
+.contact-form .form-control {
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+}
+
+.contact-form .form-control:focus {
+    border-color: #ffffff;
+}
+
+.contact-form button[type="submit"] {
+    margin-top: 20px;
+}
+
+.contact-form button[type="submit"]:hover {
+    background-color: #b8b3b3;
+    color: #01080e;
+}
+.paragraph{
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color : rgb(245, 233, 233) ;
+    text-align: center;
+    transform: scale(1); 
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    user-select: none;
+}
+
+.social-media {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    animation: fadeIn 4s ease-in-out;
+}
+
+.social-icon {
+    color: #fff;
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+@media(max-width:786px){
+    .schedule-image img {
+        max-width: 100%; /* Ensure the image doesn't exceed the container width */
+        height: auto; /* Maintain aspect ratio */
+        width: 100%;
+        display: block; /* Flexbox not necessary for centering images */
+        margin: auto;
+        position: relative;
+        z-index: 1;
+        object-fit: cover; /* Optional if you want to crop the image */
+        object-position: center;
+        margin-top: -70px;
+        margin-bottom: -70px;
+    }
+}
