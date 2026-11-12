@@ -1,0 +1,891 @@
+{% extends "blogs/base.html" %}
+{% load static %}
+
+
+{% block title %}
+    <title>Gradient Descent</title>
+{% endblock title %}
+
+
+{% block metatags %}
+    <!-- Meta Tags -->
+    <meta name="description" content="A step-by-step, intuitive walkthrough of Logistic Regression and Gradient Descent: sigmoid, binary cross-entropy, derivations, and five manual training iterations. Presented by The Wise Sapiens.">
+    <meta name="keywords" content="Gradient Descent, Logistic Regression, Machine Learning, Deep Learning, Sigmoid, Binary Cross-Entropy, Backpropagation, Supervised Learning, The Wise Sapiens, Mohsin Ramzan">
+    <meta name="author" content="Mohsin Ramzan">
+    <meta name="researcher" content="Mohsin Ramzan">
+
+    <!-- Open Graph meta tags for social media sharing -->
+    <meta property="og:title" content="Gradient Descent: Logistic Regression Step by Step">
+    <meta property="og:description" content="Understand how a model learns by manually training Logistic Regression with Gradient Descent. Presented by The Wise Sapiens.">
+    <meta property="og:image" content="https://www.thewisesapiens.org/static/ngo/logo.png">
+    <meta property="og:url" content="https://thewisesapiens.org/Blogs/Gradient_Descent/">
+{% endblock metatags %}
+
+
+{% block heading %}Gradient Descent{% endblock heading %}
+
+{% block language_option %}{% endblock language_option %}
+
+
+{% block body %}
+<div id="paragraph1">
+    <p>
+        
+        Since the dawn of transformers, which are sequential neural networks, we humans are witnessing a new kind of revolution where almost every other sector is suffering from recession. However, in reality, or under the hood, these ChatGPT or Claude Agents etc. are nothing but complex matrix multiplication which adjust their weights by training themselves on the existing data. I know it will be hard to gulp down all of these facts at once, therefore, I will try to break it down into chunks to understand it more intuitively. Also, for simplification and some taste of both Machine Learning and Deep Learning, I'm going to apply gradient descent on logistic regression , however, this doesn't mean that the complex self-attention based neural networks works the same way, the main goal is to just give you a low level understanding of how these complex system learn and improve themselves overtime with data.
+   
+    </p>
+
+    <p>
+
+   Thus, before any formal yapping, we need to know that we will be working on supervised machine learning, which means that we are going to have our training data and target sample. For example, the grades of the student as x and the output y as the remarks that they either pass or fail - or binary classification, specifically. Also, in order to understand this supervised machine learning, there is a hack which I always keep in mind, which is to consider an ML algorithm as someone who is dumb as hell. Consider it naive and unbeknownst to everything, not every time, because we have some pretrained ML models with state-of-the-art results, however, if you are planning to train a model from scratch, then it literally knows nothing and just like a kid, you have to invest hell lot of energy and study to educate him or her , same goes with these models because you need extensive computation power and massive dataset to train them. Therefore, our given workflow will be something like this (just skim it please even if it does not make any sense , for now) :
+
+    </p>
+
+    <ol>
+        <li>
+            Initialize parameters
+            \[ w=random(),\quad b=random() \]
+        </li>
+        <li>
+            Calculate linear output
+            \[ z=wx+b \]
+        </li>
+        <li>
+            Apply Sigmoid
+            \[ \hat y=\frac{1}{1+e^{-z}} \]
+        </li>
+        <li>
+            Calculate Binary Cross-Entropy
+            \[ BCE=-\frac1n\sum [y\log\hat y+(1-y)\log(1-\hat y)] \]
+        </li>
+        <li>
+            Calculate gradients
+            \[ dw=\frac1n\sum(\hat y-y)x \]
+            \[ db=\frac1n\sum(\hat y-y) \]
+        </li>
+        <li>
+            Update parameters
+            \[ w=w-\alpha dw \]
+            \[ b=b-\alpha db \]
+        </li>
+    </ol>
+
+    <p>Going to repeat this until it converges or the stopping condition is reached.</p>
+
+    <p>So guys you might be wondering ,</p>
+
+    <h2>What the hell are these parameters?</h2>
+
+    <p>
+        Since we are working on Logistic Regression, which is a modified form of Linear Regression, and linear regression is nothing but slope into variable, added by y-intercept. Mathematically it's represented as:
+        \[ y=mx+b \]
+        Here these \(m\) & \(b\) are the parameters that we are going to learn by our data because the input \(x\) will be multiplied by them to give us the precise output \(y\) we desired, thus again, its nothing but multiplication
+    </p>
+
+    <p>
+        You must be familiar with this equation if you studied maths in your college years; however, for Machine Learning we will tweak it a bit like this:
+        \[ y=wx+b \]
+    </p>
+
+    <p>Where:</p>
+    <ul>
+        <li>\(w\) is going to be the weight we modify, which refers to the slope of the line.</li>
+        <li>\(x\) is the input variable which varies according to each instance.</li>
+        <li>\(b\) is the bias, which forces the decision boundary to shift away from the origin.</li>
+    </ul>
+</div>
+
+<div id="paragraph2">
+    <h2>Sigmoid: the caveat</h2>
+
+    <p>
+        If you ever had any experience with Neural Networks, you would be aware of or familiar with Sigmoid as an activation function. However, the use case in classical and deep learning for it is fundamentally different. There, in deep learning, you are going to use it for binary or multi-class classification in the last layer or in hidden layers, but that's not recommended due to certain circumstances. However, here in classical Machine Learning, this activation function serves the same purpose of giving us the output in a certain 0 to 1 range to make it easy for prediction. To be specific, the equation
+        \[ y=wx+b \]
+        is going to give an output of any range; it can be positive or negative, but we know that the probability can only be positive and between 0 and 1 (here 1 means 100), thus to have our desired output we pass the output through the activation function \(z\), where \(z\) is:
+        \[ z =\frac{1}{1+e^{-y}} \]
+        or, being straightforward:
+        \[ \hat y=\frac{1}{1+e^{-(wx+b)}} \]
+    </p>
+
+    <p>To understand the functioning of Sigmoid you can check out this table:</p>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr><th>\(z\)</th><th>Sigmoid output</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>-11</td><td>0.0000</td></tr>
+            <tr><td>-10</td><td>0.0000</td></tr>
+            <tr><td>-9</td><td>0.0001</td></tr>
+            <tr><td>-8</td><td>0.0003</td></tr>
+            <tr><td>-7</td><td>0.0009</td></tr>
+            <tr><td>-6</td><td>0.0025</td></tr>
+            <tr><td>-5</td><td>0.0067</td></tr>
+            <tr><td>-4</td><td>0.0180</td></tr>
+            <tr><td>-3</td><td>0.0474</td></tr>
+            <tr><td>-2</td><td>0.1192</td></tr>
+            <tr><td>-1</td><td>0.2689</td></tr>
+            <tr><td>0</td><td>0.5000</td></tr>
+            <tr><td>1</td><td>0.7311</td></tr>
+            <tr><td>2</td><td>0.8808</td></tr>
+            <tr><td>3</td><td>0.9526</td></tr>
+            <tr><td>4</td><td>0.9820</td></tr>
+            <tr><td>5</td><td>0.9933</td></tr>
+            <tr><td>6</td><td>0.9975</td></tr>
+            <tr><td>7</td><td>0.9991</td></tr>
+            <tr><td>8</td><td>0.9997</td></tr>
+            <tr><td>9</td><td>0.9999</td></tr>
+            <tr><td>10</td><td>1.0000</td></tr>
+            <tr><td>11</td><td>1.0000</td></tr>
+        </tbody>
+    </table>
+
+    <p>PS: No matter what, the output of your equation will never increase from 1 or decrease from 0 if you pass it through Sigmoid \(z\).</p>
+
+    <h2>The Loss function</h2>
+
+    <p>
+        Another thing that you need to remember is that the loss function you need to use for any specific task can vary with the nature of our target variable. For instance, if you have any regression task, the loss function is going to be <strong>Mean Square Error (MSE)</strong>; however, if you have a classification task, then it will be <strong>Cross Entropy loss</strong>. But since we are working on the most simplified problem to make it easy to understand the backend, I'm going to use the <strong>Binary Cross Entropy</strong> loss function because the \(\hat y\) (output) in our equation is going to be binary. So the equation for it will be:
+        \[ \boxed{ BCE=-\frac{1}{n}\sum_{i=1}^{n} [y_i\log(\hat y_i)+(1-y_i)\log(1-\hat y_i)] } \]
+    </p>
+
+    <p>Don't get intimidated by this formula ,let me break it down for you : </p>
+    <ul>
+        <li>\(n\): Number of observations.</li>
+        <li>\(y_i\): Actual class (0 or 1).</li>
+        <li>\(\hat y_i\): Predicted probability.</li>
+        <li>\(\log\): Natural logarithm (logarithm with base \(e\)).</li>
+    </ul>
+
+    <p>
+        This equation is going to provide us a penalty which we will use to backpropagate by gradient descent to adjust the weights. <em>Please hold on if you are unable to understand everything, good things take time ;)</em>
+    </p>
+</div>
+
+<div id="paragraph3">
+    <h2>Derivatives for Backpropagation</h2>
+
+    <p>
+        Since we are going to backpropagate, we need partial derivatives beforehand of our equations with respect to \(\hat y\). Let's start with our loss function:
+        \[ L=-[y\log(\hat y)+(1-y)\log(1-\hat y)] \]
+    </p>
+
+    <p>
+        Differentiating both terms independently:
+        \[ \frac{\partial L}{\partial \hat y} = -y\frac{1}{\hat y} -(1-y)\frac{1}{1-\hat y}(-1) \]
+    </p>
+
+    <p>
+        Simplifying:
+        \[ = -\frac{y}{\hat y} + \frac{1-y}{1-\hat y} \]
+    </p>
+
+    <p>
+        Taking the common denominator:
+        \[ = \frac{-y(1-\hat y)+\hat y(1-y)} {\hat y(1-\hat y)} \]
+    </p>
+
+    <p>
+        Expanding the numerator:
+        \[ = \frac{-y+y\hat y+\hat y-y\hat y} {\hat y(1-\hat y)} \]
+    </p>
+
+    <p>
+        Therefore:
+        \[ \boxed{ \frac{\partial L}{\partial \hat y} = \frac{\hat y-y}{\hat y(1-\hat y)} } \]
+    </p>
+
+    <hr>
+
+    <p>
+        For the sigmoid function
+        \[ \sigma(z)=\frac{1}{1+e^{-z}} \]
+    </p>
+
+    <p>
+        Differentiating with respect to \(z\):
+        \[ \frac{\partial \sigma(z)}{\partial z} = -\left(1+e^{-z}\right)^{-2}(-e^{-z}) \]
+    </p>
+
+    <p>
+        Simplifying:
+        \[ = \frac{e^{-z}}{(1+e^{-z})^2} \]
+        \[ = \frac{1}{1+e^{-z}} \times \frac{(1+e^{-z})-1}{1+e^{-z}} \]
+    </p>
+
+    <p>
+        Expand the numerator:
+        \[ = \frac{1}{1+e^{-z}} \times \frac{1+e^{-z}-1}{1+e^{-z}} \]
+    </p>
+
+    <p>
+        Rearrange the numerator:
+        \[ = \frac{1}{1+e^{-z}} \times \frac{1-1+e^{-z}}{1+e^{-z}} \]
+    </p>
+
+    <p>
+        Since \(1-1=0\):
+        \[ = \frac{1}{1+e^{-z}} \times \frac{0+e^{-z}}{1+e^{-z}} \]
+        \[ = \frac{1}{1+e^{-z}} \times \frac{e^{-z}}{1+e^{-z}} \]
+    </p>
+
+    <p>
+        Now substitute:
+        \[ \sigma(z)=\frac{1}{1+e^{-z}} \]
+    </p>
+
+    <p>
+        And:
+        \[ 1-\sigma(z)=\frac{e^{-z}}{1+e^{-z}} \]
+    </p>
+
+    <p>
+        Because if we try to substitute the sigmoid function:
+        \[ =1-\frac{1}{1+e^{-z}} \]
+    </p>
+
+    <p>
+        Take the common denominator:
+        \[ =\frac{1}{1}-\frac{1}{1+e^{-z}} \]
+        \[ =\frac{1+e^{-z}}{1+e^{-z}}-\frac{1}{1+e^{-z}} \]
+    </p>
+
+    <p>
+        Combine the fractions:
+        \[ =\frac{(1+e^{-z})-1}{1+e^{-z}} \]
+    </p>
+
+    <p>
+        Expand the numerator:
+        \[ =\frac{1+e^{-z}-1}{1+e^{-z}} \]
+    </p>
+
+    <p>
+        Rearrange:
+        \[ =\frac{1-1+e^{-z}}{1+e^{-z}} \]
+    </p>
+
+    <p>
+        Simplify:
+        \[ =\frac{0+e^{-z}}{1+e^{-z}} \]
+    </p>
+
+    <p>
+        Therefore:
+        \[ \boxed{ 1-\sigma(z)=\frac{e^{-z}}{1+e^{-z}} } \]
+    </p>
+
+    <p>
+        We can rewrite the derivative as:
+        \[ \boxed{ \frac{\partial \sigma(z)}{\partial z} = \sigma(z)(1-\sigma(z)) } \]
+    </p>
+
+    <p>PS: The derivative of sigmoid is simply its output multiplied by one minus its output.</p>
+
+    <h2>Understanding derivatives in Logistic Regression</h2>
+
+    <p>Now we need to understand how Gradient Descent will adjust our weight and bias.</p>
+
+    <p>
+        Remember our model:
+        \[ z=wx+b \]
+        \[ \hat y=\sigma(z) \]
+    </p>
+
+    <p>
+        And our loss function:
+        \[ L=-[y\log(\hat y)+(1-y)\log(1-\hat y)] \]
+    </p>
+
+    <p>
+        We need to calculate two derivatives:
+        \[ \frac{\partial BCE}{\partial w} \qquad \frac{\partial BCE}{\partial b} \]
+    </p>
+
+    <p>This is where the Chain Rule becomes important.</p>
+
+    <h3>First, understand the derivative of Sigmoid</h3>
+
+    <p>
+        Our Sigmoid function is:
+        \[ \sigma(z)=\frac{1}{1+e^{-z}} \]
+    </p>
+
+    <p>
+        Its derivative is:
+        \[ \boxed{ \sigma'(z)=\sigma(z)(1-\sigma(z)) } \]
+    </p>
+
+    <p>
+        Since \(\hat y=\sigma(z)\), we can also write:
+        \[ \boxed{ \frac{d\hat y}{dz}=\hat y(1-\hat y) } \]
+    </p>
+
+    <p>This tells us how the predicted probability changes when the linear combination \(z\) changes.</p>
+
+    <h3>Deriving the loss derivative</h3>
+
+    <p>
+        We have BCE as
+        \[ L=-[y\log(\hat y)+(1-y)\log(1-\hat y)] \]
+    </p>
+
+    <p>
+        And its derivative as:
+        \[ = \frac{\hat y-y}{\hat y(1-\hat y)} \]
+    </p>
+
+    <p>
+        Now apply the Chain Rule:
+        \[ \frac{\partial L}{\partial z} = \frac{\partial L}{\partial \hat y} \times \frac{\partial \hat y}{\partial z} \]
+    </p>
+
+    <p>
+        Substituting the derivatives:
+        \[ = \frac{\hat y-y}{\hat y(1-\hat y)} \times \hat y(1-\hat y) \]
+    </p>
+
+    <p>Notice something beautiful!</p>
+
+    <p>The sigmoid terms cancel each other.</p>
+
+    <p>
+        We are left with:
+        \[ \boxed{ \frac{\partial L}{\partial z}=\hat y-y } \]
+    </p>
+
+    <p>This is one of the most important mathematical results in Logistic Regression.</p>
+
+    <h3>Derivative with respect to weight</h3>
+
+    <p>
+        We know:
+        \[ z=wx+b \]
+    </p>
+
+    <p>
+        Therefore:
+        \[ \frac{\partial z}{\partial w}=x \]
+    </p>
+
+    <p>
+        Using the Chain Rule:
+        \[ \frac{\partial L}{\partial w} = \frac{\partial L}{\partial z} \times \frac{\partial z}{\partial w} \]
+    </p>
+
+    <p>
+        Thus:
+        \[ \boxed{ \frac{\partial L}{\partial w} =(\hat y-y)x } \]
+    </p>
+
+    <p>
+        For the entire dataset, we calculate the average:
+        \[ \frac{\partial BCE}{\partial w} = \frac{1}{n} \sum_{i=1}^{n} (\hat{y}_i-y_i)x_i \]
+    </p>
+
+    <h3>5.4 Derivative with respect to bias</h3>
+
+    <p>
+        Similarly:
+        \[ \frac{\partial z}{\partial b}=1 \]
+    </p>
+
+    <p>
+        Therefore:
+        \[ \frac{\partial L}{\partial b} = (\hat y-y)\times1 \]
+    </p>
+
+    <p>
+        For the entire dataset:
+        \[ \boxed{ \frac{\partial BCE}{\partial b} = \frac{1}{n}\sum_{i=1}^{n} (\hat y_i-y_i) } \]
+    </p>
+
+    <p>We now have both gradients!</p>
+
+<h2>Learning Rate \(\alpha\)</h2>
+
+<p>We need a learning rate to control how much the parameters change during each iteration.</p>
+
+<p>
+    We represent it using:
+    \[ \alpha \]
+</p>
+
+<p>
+    For our experiment, we'll use the following, just for the simplification of our calculation:
+    \[ \boxed{\alpha=0.1} \]
+</p>
+
+<p>This means each parameter update will be 0.1 times its corresponding gradient.</p>
+
+<p>A small learning rate produces smaller updates, whereas a large learning rate produces larger updates.</p>
+
+{% comment %} <div class="image-container">
+    <img src="{% static "blogs/BlogsPhotos/learning_rate_comparison.jpg" %}" alt="Learning rate comparison" class="img-fluid my-3">
+</div> {% endcomment %}
+    <h2>Gradient Updation Rule</h2>
+
+    <p>
+        Now let's combine our mathematical derivations.
+    </p>
+
+    <p>
+        Our weight update equation:
+        \[ \boxed{ w_{new}=w_{old}- \alpha\frac{\partial BCE}{\partial w} } \]
+    </p>
+
+    <p>
+        Our bias update equation:
+        \[ \boxed{ b_{new}=b_{old}- \alpha\frac{\partial BCE}{\partial b} } \]
+    </p>
+
+    <p>
+        Substituting our gradients:
+        \[ \boxed{ w_{new}=w_{old}- \frac{\alpha}{n} \sum(\hat y_i-y_i)x_i } \]
+    </p>
+
+    <p>
+        And:
+        \[ \boxed{ b_{new}=b_{old}- \frac{\alpha}{n} \sum(\hat y_i-y_i) } \]
+    </p>
+
+    <p>That's it! We now have the complete Gradient Descent equations for Logistic Regression.</p>
+</div>
+
+<div id="paragraph4">
+    <h2>Forward and Backward iterations</h2>
+
+    <p>
+        We'll manually train our Logistic Regression model using the dataset we introduced earlier and it consist only 3 instances for the students which are going to pass/fail dataset based on study hours. I deliberately kept the instances limited to reduce the complexity, otherwise, in real world, you have thousands of rows of data to mess up with.
+    </p>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr><th>Study hours (x)</th><th>Result (y)</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>1</td><td>0 (Fail)</td></tr>
+            <tr><td>2</td><td>0 (Fail)</td></tr>
+            <tr><td>4</td><td>1 (Pass)</td></tr>
+        </tbody>
+    </table>
+
+    <p>
+        Dataset representation:
+        \[ X=[1,2,4] \]
+        \[ y=[0,0,1] \]
+    </p>
+
+    <p>Our experimental setup:</p>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr><th>Parameter</th><th>Value</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Dataset</td><td>(1,0), (2,0), (4,1)</td></tr>
+            <tr><td>Initial weight (w)</td><td>0</td></tr>
+            <tr><td>Initial bias (b)</td><td>0</td></tr>
+            <tr><td>Learning rate (α)</td><td>0.1</td></tr>
+            <tr><td>Loss function</td><td>Binary Cross-Entropy</td></tr>
+            <tr><td>Updates</td><td>5</td></tr>
+        </tbody>
+    </table>
+
+    <p>
+        Our model:
+        \[ z=wx+b \]
+        \[ \hat y=\frac{1}{1+e^{-z}} \]
+    </p>
+
+    <p>
+        Our gradients:
+        \[ \frac{\partial BCE}{\partial w} =\frac{1}{3}\sum(\hat y-y)x \]
+        \[ \frac{\partial BCE}{\partial b} =\frac{1}{3}\sum(\hat y-y) \]
+    </p>
+
+    <h2>Iteration 0: Initial state</h2>
+
+    <p>
+        Let's initialize our parameters:
+        \[ w=0,\qquad b=0 \]
+    </p>
+
+    <p>
+        Our model:
+        \[ z=0x+0=0 \]
+    </p>
+
+    <p>
+        Since \(z=0\), our Sigmoid function produces:
+        \[ \hat y=\frac{1}{1+e^0}=0.5 \]
+    </p>
+
+    <p>Therefore, all three observations receive a predicted probability of 0.5.</p>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr><th>x</th><th>Actual y</th><th>Predicted probability</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>1</td><td>0</td><td>0.5</td></tr>
+            <tr><td>2</td><td>0</td><td>0.5</td></tr>
+            <tr><td>4</td><td>1</td><td>0.5</td></tr>
+        </tbody>
+    </table>
+
+    <h3>Step 1: Calculate the initial loss</h3>
+
+    <p>
+        Our Binary Cross-Entropy formula:
+        \[ BCE=-\frac{1}{3}\sum [y\log(\hat y)+(1-y)\log(1-\hat y)] \]
+    </p>
+
+    <p>
+        Substitute the values:
+        \[ BCE=-\frac{1}{3}[ \log(0.5)+\log(0.5)+\log(0.5)] \]
+        \[ =-\log(0.5) \]
+        \[ \boxed{BCE=0.6931} \]
+    </p>
+
+    <p>This is our initial loss.</p>
+
+    <h3>Step 2: Calculate the weight gradient</h3>
+
+    <p>
+        \[ \frac{\partial BCE}{\partial w} = \frac{1}{3}\sum(\hat y-y)x \]
+    </p>
+
+    <p>
+        Substitute our observations:
+        \[ =\frac{1}{3}[ (0.5-0)(1) +(0.5-0)(2) +(0.5-1)(4)] \]
+        \[ =\frac{1}{3}[0.5+1-2] \]
+        \[ =\frac{-0.5}{3} \]
+        \[ \boxed{-0.1667} \]
+    </p>
+
+    <h3>Step 3: Calculate the bias gradient</h3>
+
+    <p>
+        \[ \frac{\partial BCE}{\partial b} = \frac{1}{3}\sum(\hat y-y) \]
+        \[ =\frac{1}{3}[ (0.5-0)+(0.5-0)+(0.5-1)] \]
+        \[ =\frac{1}{3}[0.5+0.5-0.5] \]
+        \[ \boxed{0.1667} \]
+    </p>
+
+    <h3>Step 4: Update our parameters</h3>
+
+    <p>
+        Now apply the Gradient Descent update equations.
+    </p>
+
+    <p>
+        Weight:
+        \[ w_{new}=0-0.1(-0.1667) \]
+        \[ \boxed{w=0.0167} \]
+    </p>
+
+    <p>
+        Bias:
+        \[ b_{new}=0-0.1(0.1667) \]
+        \[ \boxed{b=-0.0167} \]
+    </p>
+
+    <p>First update completed.</p>
+
+    <p>
+        Our new model becomes:
+        \[ \boxed{z=0.0167x-0.0167} \]
+    </p>
+
+    <p>Notice that our weight increased while our bias decreased.</p>
+
+    <p>This is how Gradient Descent adjusts the parameters to reduce the loss.</p>
+
+    <h2>Iteration 1</h2>
+
+    <p>
+        Our new parameters:
+        \[ w=0.0167,\qquad b=-0.0167 \]
+    </p>
+
+    <p>Let's calculate the predictions.</p>
+
+    <p>
+        For the first observation:
+        \[ z=(0.0167)(1)-0.0167=0 \]
+        \[ \hat y=\sigma(0)=0.5 \]
+    </p>
+
+    <p>
+        For the second observation:
+        \[ z=(0.0167)(2)-0.0167=0.0167 \]
+        \[ \hat y=\sigma(0.0167)\approx0.5042 \]
+    </p>
+
+    <p>
+        For the third observation:
+        \[ z=(0.0167)(4)-0.0167=0.05 \]
+        \[ \hat y=\sigma(0.05)\approx0.5125 \]
+    </p>
+
+    <p>Our predictions:</p>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr><th>x</th><th>Actual y</th><th>Predicted probability</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>1</td><td>0</td><td>0.5000</td></tr>
+            <tr><td>2</td><td>0</td><td>0.5042</td></tr>
+            <tr><td>4</td><td>1</td><td>0.5125</td></tr>
+        </tbody>
+    </table>
+
+    <p>
+        Now calculate the gradients:
+        \[ \frac{\partial BCE}{\partial w} = \frac{1}{3}[ (0.5)(1)+(0.5042)(2)+(-0.4875)(4)] \]
+        \[ \boxed{-0.1472} \]
+    </p>
+
+    <p>
+        And:
+        \[ \frac{\partial BCE}{\partial b} = \frac{1}{3}[0.5+0.5042-0.4875] \]
+        \[ \boxed{0.1722} \]
+    </p>
+
+    <p>
+        Update our parameters:
+        \[ w=0.0167-0.1(-0.1472) \]
+        \[ \boxed{w=0.0314} \]
+        \[ b=-0.0167-0.1(0.1722) \]
+        \[ \boxed{b=-0.0339} \]
+    </p>
+
+    <p>
+        Our new loss:
+        \[ \boxed{BCE=0.6877} \]
+    </p>
+
+    <p>The loss has decreased from 0.6931 to 0.6877.</p>
+
+    <h2>Iteration 2</h2>
+
+    <p>
+        Starting parameters:
+        \[ w=0.0314,\qquad b=-0.0339 \]
+    </p>
+
+    <p>Predictions:</p>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr><th>x</th><th>Actual y</th><th>Predicted probability</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>1</td><td>0</td><td>0.4994</td></tr>
+            <tr><td>2</td><td>0</td><td>0.5072</td></tr>
+            <tr><td>4</td><td>1</td><td>0.5229</td></tr>
+        </tbody>
+    </table>
+
+    <p>
+        Gradients:
+        \[ \frac{\partial BCE}{\partial w} \approx-0.1315 \]
+        \[ \frac{\partial BCE}{\partial b} \approx0.1765 \]
+    </p>
+
+    <p>
+        Updates:
+        \[ w=0.0314-0.1(-0.1315) \]
+        \[ \boxed{w=0.0445} \]
+        \[ b=-0.0339-0.1(0.1765) \]
+        \[ \boxed{b=-0.0515} \]
+    </p>
+
+    <p>
+        New loss:
+        \[ \boxed{BCE=0.6827} \]
+    </p>
+
+    <h2>Iteration 3</h2>
+
+    <p>
+        Starting parameters:
+        \[ w=0.0445,\qquad b=-0.0515 \]
+    </p>
+
+    <p>Predictions:</p>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr><th>x</th><th>Actual y</th><th>Predicted probability</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>1</td><td>0</td><td>0.4983</td></tr>
+            <tr><td>2</td><td>0</td><td>0.5094</td></tr>
+            <tr><td>4</td><td>1</td><td>0.5316</td></tr>
+        </tbody>
+    </table>
+
+    <p>
+        Gradients:
+        \[ \frac{\partial BCE}{\partial w} \approx-0.1188 \]
+        \[ \frac{\partial BCE}{\partial b} \approx0.1798 \]
+    </p>
+
+    <p>
+        Updates:
+        \[ w=0.0445-0.1(-0.1188) \]
+        \[ \boxed{w=0.0564} \]
+        \[ b=-0.0515-0.1(0.1798) \]
+        \[ \boxed{b=-0.0695} \]
+    </p>
+
+    <p>
+        New loss:
+        \[ \boxed{BCE=0.6779} \]
+    </p>
+
+    <h2>Iteration 4</h2>
+
+    <p>
+        Starting parameters:
+        \[ w=0.0564,\qquad b=-0.0695 \]
+    </p>
+
+    <p>Predictions:</p>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr><th>x</th><th>Actual y</th><th>Predicted probability</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>1</td><td>0</td><td>0.4967</td></tr>
+            <tr><td>2</td><td>0</td><td>0.5108</td></tr>
+            <tr><td>4</td><td>1</td><td>0.5390</td></tr>
+        </tbody>
+    </table>
+
+    <p>
+        Gradients:
+        \[ \frac{\partial BCE}{\partial w} \approx-0.1086 \]
+        \[ \frac{\partial BCE}{\partial b} \approx0.1822 \]
+    </p>
+
+    <p>
+        Updates:
+        \[ w=0.0564-0.1(-0.1086) \]
+        \[ \boxed{w=0.0673} \]
+        \[ b=-0.0695-0.1(0.1822) \]
+        \[ \boxed{b=-0.0877} \]
+    </p>
+
+    <p>
+        New loss:
+        \[ \boxed{BCE=0.6733} \]
+    </p>
+
+    <h2>The bigger picture</h2>
+
+    <p>Now let's put all our calculations together.</p>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr><th>Iteration</th><th>Weight (w)</th><th>Bias (b)</th><th>BCE Loss</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>0 (Initial)</td><td>0.0000</td><td>0.0000</td><td>0.6931</td></tr>
+            <tr><td>1</td><td>0.0167</td><td>-0.0167</td><td>0.6877</td></tr>
+            <tr><td>2</td><td>0.0314</td><td>-0.0339</td><td>0.6827</td></tr>
+            <tr><td>3</td><td>0.0445</td><td>-0.0515</td><td>0.6779</td></tr>
+            <tr><td>4</td><td>0.0564</td><td>-0.0695</td><td>0.6733</td></tr>
+            <tr><td>5</td><td>0.0673</td><td>-0.0877</td><td>0.6688</td></tr>
+        </tbody>
+    </table>
+
+    <p><strong>Binary Cross-Entropy across iterations</strong></p>
+    <p>Loss decreases over five Gradient Descent updates.</p>
+
+    <p>What can we observe?</p>
+    <ol>
+        <li>Our initial loss was 0.6931.</li>
+        <li>The weight gradually increased.</li>
+        <li>The bias gradually decreased.</li>
+        <li>The predicted probability for the positive example increased.</li>
+        <li>Our loss decreased with every iteration.</li>
+    </ol>
+
+    <p>Our model is learning to distinguish between students who pass and those who fail.</p>
+
+    <p>However, five iterations are not enough to achieve a well-trained model. We are demonstrating the mechanics of optimization, not claiming that training is complete.</p>
+
+    <h2>Understanding the final predictions</h2>
+
+    <p>
+        After five updates, our parameters are approximately:
+        \[ w=0.0673 \]
+        \[ b=-0.0877 \]
+    </p>
+
+    <p>
+        Our final model:
+        \[ \boxed{ \hat y=\sigma(0.0673x-0.0877) } \]
+    </p>
+
+    <p>Let's calculate the final probabilities.</p>
+
+    <p>
+        For \(x=1\):
+        \[ \hat y=\sigma(0.0673-0.0877) \]
+        \[ \boxed{\hat y\approx0.4949} \]
+    </p>
+
+    <p>
+        For \(x=2\):
+        \[ \hat y=\sigma(0.1346-0.0877) \]
+        \[ \boxed{\hat y\approx0.5117} \]
+    </p>
+
+    <p>
+        For \(x=4\):
+        \[ \hat y=\sigma(0.2691-0.0877) \]
+        \[ \boxed{\hat y\approx0.5452} \]
+    </p>
+
+    <p>Our final predictions:</p>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr><th>Study hours</th><th>Actual class</th><th>Predicted probability</th><th>Predicted class</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>1</td><td>0</td><td>0.4949</td><td>0</td></tr>
+            <tr><td>2</td><td>0</td><td>0.5117</td><td>1</td></tr>
+            <tr><td>4</td><td>1</td><td>0.5452</td><td>1</td></tr>
+        </tbody>
+    </table>
+
+    <p>Using a threshold of 0.5, our model correctly classifies two out of three observations.</p>
+
+    <p>Interestingly, the second observation is incorrectly classified. Continue...</p>
+
+    <br>
+    <div class="divider"></div>
+</div>
+
+<p class="credits" id="credit">
+    Author and Researcher: <a class="credits-link" href="https://www.instagram.com/writtenbymohsin/">Mohsin Ramzan</a>
+
+    <div class="divider"></div>
+</p>
+
+</div>
+<!-- Navigation Buttons -->
+<div class="button-container">
+    <a href="{% url  'blog_page' slug="ImportanceOfArts" %}" class="btn previous-button" role="button">Previous Article</a>
+    <a href="{% url  'blog_page' slug="XX_against_XY_and_ViceVersa" %}" class="btn next-button" role="button">Next Article</a>
+</div>
+<!-- JS -->
+
+{% endblock body %}
